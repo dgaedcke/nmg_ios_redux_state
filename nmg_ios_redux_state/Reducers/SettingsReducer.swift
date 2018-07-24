@@ -11,8 +11,11 @@ import ReSwift
 func settingsReducer(action: Action, state: SettingsState?) -> SettingsState {
 	let state = state ?? SettingsState()
 	
-	switch action {
-	case let newCurrency as CurrencyModeChangeAction:
+	guard let specAction = action as? StSettingsAction
+	else { return state }
+	
+	switch specAction {
+	case .changeCurrencyMode(let newCurrencyType):
 		break
 	default:
 		break

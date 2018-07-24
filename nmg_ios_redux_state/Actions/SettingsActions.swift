@@ -8,17 +8,35 @@
 
 import ReSwift
 
+enum StCurrencyType {
+	case coin
+	case token
+}
 
-struct CurrencyModeChangeAction: Action {
-	let assetKey: CurrencyMode = .token
+
+enum StSettingsAction: Action {
+	// any user, local config settings
 	
-	enum CurrencyMode {
-		case coin
-		case token
-	}
+	case changeCurrencyMode(StCurrencyType)
+	case changeCurrentEvent(String)	// eventID
+	case changeTickerSource(String) // eventID
+	//
+	case setBalanceAlert(Int)	// set up account $$ threashold
+	case receivedBalanceAlert(Int)  // notify user when acct. balance reaches threashold
 }
 
 
-struct TickerChangeAction: Action {
-	let assetKey: String
-}
+
+
+
+
+//struct CurrencyModeChangeAction: Action {
+//	let assetKey: CurrencyMode = .token
+//
+//
+//}
+//
+//
+//struct TickerChangeAction: Action {
+//	let assetKey: String
+//}

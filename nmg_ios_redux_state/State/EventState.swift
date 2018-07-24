@@ -17,16 +17,15 @@ struct EventState: StateType {
 	all GLOBAL data (same for all users)
 	*/
 	var eventMap:[String:Event] = [:]
-	var teamStateMgr = TeamStateMgr()
-	
+	var teamStateMgr = TeamStateMgr.shared
 	
 	mutating func updateEvent(event:Event) {
 		// facade over teamStateMgr
-		
+		eventMap[event.id] = event
 	}
 	
-	mutating func updateState(teams:[Team], games:[Game]) {
+	mutating func updateTeamState(teams:[Team], games:[Game]) {
 		// facade over teamStateMgr
-		
+		teamStateMgr.updateState(teams: teams, games: games)
 	}
 }

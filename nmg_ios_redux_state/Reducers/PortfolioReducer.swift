@@ -12,8 +12,8 @@ func portfolioReducer(action: Action, state: PortfolioState?) -> PortfolioState 
 	let state = state ?? PortfolioState()
 	
 	switch action {
-	case let newCurrency as CurrencyModeChangeAction:
-		break
+//	case let newCurrency as CurrencyModeChangeAction:
+//		break
 	default:
 		break
 	}

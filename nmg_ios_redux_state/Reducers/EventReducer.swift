@@ -13,8 +13,8 @@ func eventReducer(action: Action, state: EventState?) -> EventState {
 	let state = state ?? EventState()
 	
 	switch action {
-	case let newCurrency as CurrencyModeChangeAction:
-		break
+//	case let newCurrency as CurrencyModeChangeAction:
+//		break
 	default:
 		break
 	}

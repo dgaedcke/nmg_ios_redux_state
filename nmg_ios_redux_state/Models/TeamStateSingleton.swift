@@ -288,7 +288,7 @@ struct TeamStateMgr {
 
 
 	*/
-//	static var shared = TeamStateMgr()
+	static var shared = TeamStateMgr()
 	
 	fileprivate var teamMap:[TeamID:TeamGameTree] = [:]
 	

@@ -39,10 +39,7 @@ struct SettingsState: StateType {
 	*/
 }
 
-struct BankingState: StateType {
-	/*  user account balances & config for adding/removing money
-	*/
-}
+
 
 struct PortfolioState: StateType {
 	

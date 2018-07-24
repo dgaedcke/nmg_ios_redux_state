@@ -12,8 +12,8 @@ func notificationReducer(action: Action, state: NotificationState?) -> Notificat
 	let state = state ?? NotificationState()
 	
 	switch action {
-	case let newCurrency as CurrencyModeChangeAction:
-		break
+//	case let newCurrency as CurrencyModeChangeAction:
+//		break
 	default:
 		break
 	}
