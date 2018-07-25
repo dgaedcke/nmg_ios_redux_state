@@ -6,6 +6,8 @@
 //  Copyright © 2018 New Millennial Games, LLC. All rights reserved.
 //
 
+// PSEUDOCODE .. don't copy into project
+
 import Foundation
 
 enum TeamStateChangeMarker:Int, Codable {

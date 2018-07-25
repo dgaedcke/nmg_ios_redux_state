@@ -11,7 +11,10 @@ import ReSwift
 func bankingReducer(action: Action, state: BankingState?) -> BankingState {
 	let state = state ?? BankingState(coinBalance: 0, tokenBalance: 0, refillPolicy: 0, liquidatePolicy: 0)
 	
-	switch action {
+	guard let specAction = action as? StBankingAction
+		else { return state }
+	
+	switch specAction {
 //	case let newCurrency as CurrencyModeChangeAction:
 //		break
 	default:

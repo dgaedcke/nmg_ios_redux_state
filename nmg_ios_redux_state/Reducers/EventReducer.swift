@@ -11,8 +11,10 @@ import ReSwift
 func eventReducer(action: Action, state: EventState?) -> EventState {
 
 	let state = state ?? EventState()
+	guard let specAction = action as? StEventAction
+		else { return state }
 	
-	switch action {
+	switch specAction {
 //	case let newCurrency as CurrencyModeChangeAction:
 //		break
 	default:

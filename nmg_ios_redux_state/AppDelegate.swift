@@ -7,6 +7,8 @@
 //
 import ReSwift
 
+
+// main state repo
 var store = Store<AppState>(reducer: appReducer, state: nil)
 
 

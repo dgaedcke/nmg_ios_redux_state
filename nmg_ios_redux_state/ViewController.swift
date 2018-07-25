@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import ReSwift
+
 
 class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		store.subscribe(self) { $0.select { state in state.userAndSettingsState } }
 	}
 
 }
 
+
+extension ViewController: StoreSubscriber {
+	
+	func newState(state: SettingsState) {
+
+//		switch state {
+//		case .loading:
+//			break
+//		case let .finished(films):
+//
+//		}
+	}
+}

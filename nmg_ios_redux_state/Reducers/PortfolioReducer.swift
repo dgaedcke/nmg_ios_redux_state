@@ -11,7 +11,10 @@ import ReSwift
 func portfolioReducer(action: Action, state: PortfolioState?) -> PortfolioState {
 	let state = state ?? PortfolioState()
 	
-	switch action {
+	guard let specAction = action as? StPortfolioAction
+		else { return state }
+	
+	switch specAction {
 //	case let newCurrency as CurrencyModeChangeAction:
 //		break
 	default:

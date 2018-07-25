@@ -30,6 +30,8 @@ TeamGameTree (private) is a teamID & list of GameProgress
 TeamStateMgr is the singleton that keeps track of all this state
 */
 
+// PSEUDOCODE .. don't copy into project
+
 import Foundation
 //import Disk
 //import ExtraKit

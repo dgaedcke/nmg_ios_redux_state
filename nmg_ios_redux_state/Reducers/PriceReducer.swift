@@ -12,7 +12,10 @@ func priceReducer(action: Action, state: PricesState?) -> PricesState {
 	
 	let state = state ?? PricesState()
 	
-	switch action {
+	guard let specAction = action as? StPriceAction
+		else { return state }
+	
+	switch specAction {
 //	case let newCurrency as CurrencyModeChangeAction:
 //		break
 	default:

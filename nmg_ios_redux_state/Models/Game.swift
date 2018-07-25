@@ -6,6 +6,8 @@
 //  Copyright © 2017 New Millennial Games, LLC. All rights reserved.
 //
 
+// PSEUDOCODE .. don't copy into project
+
 import Foundation
 import UIKit
 

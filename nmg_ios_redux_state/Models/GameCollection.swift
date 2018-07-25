@@ -7,6 +7,8 @@
 //
 
 // abstraction not currently in use
+// copy to nmg_ios
+
 
 struct GameCollection<Element: Hashable> {
 	// custom collection of existing "game" records for the user

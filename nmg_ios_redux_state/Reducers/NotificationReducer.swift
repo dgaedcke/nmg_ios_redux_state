@@ -11,7 +11,10 @@ import ReSwift
 func notificationReducer(action: Action, state: NotificationState?) -> NotificationState {
 	let state = state ?? NotificationState()
 	
-	switch action {
+	guard let specAction = action as? StNotificationAction
+		else { return state }
+	
+	switch specAction {
 //	case let newCurrency as CurrencyModeChangeAction:
 //		break
 	default:

@@ -23,13 +23,6 @@ struct AppState: StateType {
 //	let leaderboardState: LeaderboardState
 }
 
-struct PricesState: StateType {
-	/*  team prices
-		all GLOBAL data (same for all users)
-	*/
-	
-}
-
 struct SettingsState: StateType {
 	/*  user app settings including:
 		currency (token or coin) mode

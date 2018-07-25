@@ -17,6 +17,12 @@
 		57326B332107B3E500649323 /* EventActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EventActions.swift */; };
 		57326B352107B54500649323 /* BankingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* BankingActions.swift */; };
 		57326B372107BCEF00649323 /* BankingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B362107BCEF00649323 /* BankingState.swift */; };
+		57326B3C2107EAD900649323 /* TeamPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B392107EAD900649323 /* TeamPrices.swift */; };
+		57326B3D2107EAD900649323 /* TeamPricesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3A2107EAD900649323 /* TeamPricesApi.swift */; };
+		57326B3E2107EAD900649323 /* EventPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3B2107EAD900649323 /* EventPrices.swift */; };
+		57326B402107EB1700649323 /* PricesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3F2107EB1700649323 /* PricesState.swift */; };
+		57326B422107EDD800649323 /* TickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B412107EDD800649323 /* TickerSettings.swift */; };
+		57326B442107F70300649323 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B432107F70300649323 /* NotificationAction.swift */; };
 		574642EB210660F400FBAE49 /* EventState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* EventState.swift */; };
 		5760DE2B2102AA5700F2207F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE262102AA5700F2207F /* Game.swift */; };
 		5760DE2C2102AA5700F2207F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE272102AA5700F2207F /* Event.swift */; };
@@ -55,6 +61,12 @@
 		57326B322107B3E500649323 /* EventActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActions.swift; sourceTree = "<group>"; };
 		57326B342107B54500649323 /* BankingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingActions.swift; sourceTree = "<group>"; };
 		57326B362107BCEF00649323 /* BankingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingState.swift; sourceTree = "<group>"; };
+		57326B392107EAD900649323 /* TeamPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPrices.swift; sourceTree = "<group>"; };
+		57326B3A2107EAD900649323 /* TeamPricesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPricesApi.swift; sourceTree = "<group>"; };
+		57326B3B2107EAD900649323 /* EventPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPrices.swift; sourceTree = "<group>"; };
+		57326B3F2107EB1700649323 /* PricesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesState.swift; sourceTree = "<group>"; };
+		57326B412107EDD800649323 /* TickerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSettings.swift; sourceTree = "<group>"; };
+		57326B432107F70300649323 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAction.swift; sourceTree = "<group>"; };
 		574642EA210660F400FBAE49 /* EventState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventState.swift; sourceTree = "<group>"; };
 		5760DE262102AA5700F2207F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = nmg_ios_redux_state/Models/Game.swift; sourceTree = SOURCE_ROOT; };
 		5760DE272102AA5700F2207F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = nmg_ios_redux_state/Models/Event.swift; sourceTree = SOURCE_ROOT; };
@@ -126,6 +138,16 @@
 			path = nmg_ios_redux_state;
 			sourceTree = "<group>";
 		};
+		57326B382107EAA700649323 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				57326B3B2107EAD900649323 /* EventPrices.swift */,
+				57326B392107EAD900649323 /* TeamPrices.swift */,
+				57326B3A2107EAD900649323 /* TeamPricesApi.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5760DE222102AA1B00F2207F /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +156,7 @@
 				5760DE3C2102B3FF00F2207F /* SettingsActions.swift */,
 				57326B342107B54500649323 /* BankingActions.swift */,
 				5760DE342102AE6100F2207F /* PortfolioActions.swift */,
+				57326B432107F70300649323 /* NotificationAction.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -155,8 +178,10 @@
 		5760DE242102AA2900F2207F /* State */ = {
 			isa = PBXGroup;
 			children = (
+				57326B382107EAA700649323 /* Helpers */,
 				5760DE302102AE1500F2207F /* AppState.swift */,
 				574642EA210660F400FBAE49 /* EventState.swift */,
+				57326B3F2107EB1700649323 /* PricesState.swift */,
 				57326B362107BCEF00649323 /* BankingState.swift */,
 			);
 			path = State;
@@ -174,6 +199,7 @@
 				5760DE282102AA5700F2207F /* Holding.swift */,
 				5760DE292102AA5700F2207F /* Sport.swift */,
 				5760DE2A2102AA5700F2207F /* Team.swift */,
+				57326B412107EDD800649323 /* TickerSettings.swift */,
 			);
 			name = "Models (dont copy)";
 			path = "New Group";
@@ -316,23 +342,29 @@
 				5760DE2F2102AA5700F2207F /* Team.swift in Sources */,
 				5760DE332102AE2F00F2207F /* AppReducer.swift in Sources */,
 				57FF68F5210653D700789F20 /* NotificationReducer.swift in Sources */,
+				57326B3C2107EAD900649323 /* TeamPrices.swift in Sources */,
 				57FF68F22106448D00789F20 /* GameCollection.swift in Sources */,
+				57326B3D2107EAD900649323 /* TeamPricesApi.swift in Sources */,
 				5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */,
 				5760DE312102AE1500F2207F /* AppState.swift in Sources */,
 				57164E4D2101040100F4E76F /* ViewController.swift in Sources */,
+				57326B402107EB1700649323 /* PricesState.swift in Sources */,
 				5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */,
 				57326B352107B54500649323 /* BankingActions.swift in Sources */,
 				574642EB210660F400FBAE49 /* EventState.swift in Sources */,
+				57326B422107EDD800649323 /* TickerSettings.swift in Sources */,
 				57326B372107BCEF00649323 /* BankingState.swift in Sources */,
 				57FF68EB21063D2C00789F20 /* PortfolioReducer.swift in Sources */,
 				57326B312107B2DE00649323 /* PriceActions.swift in Sources */,
 				57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */,
 				57326B332107B3E500649323 /* EventActions.swift in Sources */,
 				5760DE2B2102AA5700F2207F /* Game.swift in Sources */,
+				57326B442107F70300649323 /* NotificationAction.swift in Sources */,
 				57FF68F32106448D00789F20 /* TeamStatus.swift in Sources */,
 				5760DE352102AE6100F2207F /* PortfolioActions.swift in Sources */,
 				5760DE2E2102AA5700F2207F /* Sport.swift in Sources */,
 				5760DE392102B24800F2207F /* PriceReducer.swift in Sources */,
+				57326B3E2107EAD900649323 /* EventPrices.swift in Sources */,
 				57FF68F02106448D00789F20 /* TeamStateSingleton.swift in Sources */,
 				57164E4B2101040100F4E76F /* AppDelegate.swift in Sources */,
 			);

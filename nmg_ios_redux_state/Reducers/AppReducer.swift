@@ -13,4 +13,13 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 	)
 }
 
+// or another pattern
 
+//struct MainAppReducer: Reducer<AppState> {
+////	let apiManager = MarvelAPIManager()
+//	
+//	func handleAction(action: Action, state: AppState?) -> AppState {
+//		return appReducer(action: action, state: state)
+//	}
+//	
+//}
