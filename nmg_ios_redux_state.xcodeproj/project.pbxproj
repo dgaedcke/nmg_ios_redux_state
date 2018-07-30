@@ -13,6 +13,7 @@
 		57164E522101040200F4E76F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57164E512101040200F4E76F /* Assets.xcassets */; };
 		57164E552101040200F4E76F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57164E532101040200F4E76F /* LaunchScreen.storyboard */; };
 		57164E5D2101045400F4E76F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57164E5C2101045400F4E76F /* Podfile */; };
+		571B8D61210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */; };
 		57326B312107B2DE00649323 /* PriceActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B302107B2DE00649323 /* PriceActions.swift */; };
 		57326B332107B3E500649323 /* EventActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EventActions.swift */; };
 		57326B352107B54500649323 /* BankingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* BankingActions.swift */; };
@@ -110,6 +111,16 @@
 		7A6F53C8349CC218C2BA2A0E /* Pods_nmg_ios_redux_state.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D885AE0E0A62155D2026F2F /* Pods_nmg_ios_redux_state.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		571B8D63210FB23B00B5C4A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57164E3F2101040100F4E76F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57164E462101040100F4E76F;
+			remoteInfo = nmg_ios_redux_state;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3BAE970E1353810BC895457D /* Pods-nmg_ios_redux_state.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_state.release.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_state/Pods-nmg_ios_redux_state.release.xcconfig"; sourceTree = "<group>"; };
 		54366410489DB6D2A5C01D7F /* Pods-nmg_ios_redux_state.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_state.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_state/Pods-nmg_ios_redux_state.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +132,9 @@
 		57164E542101040200F4E76F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57164E562101040200F4E76F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57164E5C2101045400F4E76F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		571B8D5E210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nmg_ios_redux_stateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nmg_ios_redux_stateTests.swift; sourceTree = "<group>"; };
+		571B8D62210FB23B00B5C4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57326B302107B2DE00649323 /* PriceActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceActions.swift; sourceTree = "<group>"; };
 		57326B322107B3E500649323 /* EventActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActions.swift; sourceTree = "<group>"; };
 		57326B342107B54500649323 /* BankingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingActions.swift; sourceTree = "<group>"; };
@@ -227,6 +241,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		571B8D5B210FB23B00B5C4A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -235,6 +256,7 @@
 			children = (
 				57164E5C2101045400F4E76F /* Podfile */,
 				57164E492101040100F4E76F /* nmg_ios_redux_state */,
+				571B8D5F210FB23B00B5C4A7 /* nmg_ios_redux_stateTests */,
 				57164E482101040100F4E76F /* Products */,
 				D7BBEA942750D4ABEF85699B /* Pods */,
 				888432FE1E2826A066B40CA9 /* Frameworks */,
@@ -245,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				57164E472101040100F4E76F /* nmg_ios_redux_state.app */,
+				571B8D5E210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +275,6 @@
 		57164E492101040100F4E76F /* nmg_ios_redux_state */ = {
 			isa = PBXGroup;
 			children = (
-				571B8D59210FAA9C00B5C4A7 /* Tests */,
 				57474041210ADF2F00B24EAA /* NmgApi */,
 				5760DE252102AA3500F2207F /* Models (dont copy) */,
 				5760DE242102AA2900F2207F /* State */,
@@ -269,11 +291,13 @@
 			path = nmg_ios_redux_state;
 			sourceTree = "<group>";
 		};
-		571B8D59210FAA9C00B5C4A7 /* Tests */ = {
+		571B8D5F210FB23B00B5C4A7 /* nmg_ios_redux_stateTests */ = {
 			isa = PBXGroup;
 			children = (
+				571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */,
+				571B8D62210FB23B00B5C4A7 /* Info.plist */,
 			);
-			path = Tests;
+			path = nmg_ios_redux_stateTests;
 			sourceTree = "<group>";
 		};
 		57326B382107EAA700649323 /* Helpers */ = {
@@ -468,6 +492,24 @@
 			productReference = 57164E472101040100F4E76F /* nmg_ios_redux_state.app */;
 			productType = "com.apple.product-type.application";
 		};
+		571B8D5D210FB23B00B5C4A7 /* nmg_ios_redux_stateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 571B8D65210FB23B00B5C4A7 /* Build configuration list for PBXNativeTarget "nmg_ios_redux_stateTests" */;
+			buildPhases = (
+				571B8D5A210FB23B00B5C4A7 /* Sources */,
+				571B8D5B210FB23B00B5C4A7 /* Frameworks */,
+				571B8D5C210FB23B00B5C4A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				571B8D64210FB23B00B5C4A7 /* PBXTargetDependency */,
+			);
+			name = nmg_ios_redux_stateTests;
+			productName = nmg_ios_redux_stateTests;
+			productReference = 571B8D5E210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -480,6 +522,10 @@
 				TargetAttributes = {
 					57164E462101040100F4E76F = {
 						CreatedOnToolsVersion = 9.4.1;
+					};
+					571B8D5D210FB23B00B5C4A7 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 57164E462101040100F4E76F;
 					};
 				};
 			};
@@ -497,6 +543,7 @@
 			projectRoot = "";
 			targets = (
 				57164E462101040100F4E76F /* nmg_ios_redux_state */,
+				571B8D5D210FB23B00B5C4A7 /* nmg_ios_redux_stateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -510,6 +557,13 @@
 				57164E522101040200F4E76F /* Assets.xcassets in Resources */,
 				57164E5D2101045400F4E76F /* Podfile in Resources */,
 				57164E502101040100F4E76F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		571B8D5C210FB23B00B5C4A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +716,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		571B8D5A210FB23B00B5C4A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				571B8D61210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		571B8D64210FB23B00B5C4A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57164E462101040100F4E76F /* nmg_ios_redux_state */;
+			targetProxy = 571B8D63210FB23B00B5C4A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		57164E4E2101040100F4E76F /* Main.storyboard */ = {
@@ -836,6 +906,46 @@
 			};
 			name = Release;
 		};
+		571B8D66210FB23B00B5C4A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48B6SCJ2L;
+				INFOPLIST_FILE = nmg_ios_redux_stateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pathoz.touchstone.nmg-ios-redux-stateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nmg_ios_redux_state.app/nmg_ios_redux_state";
+			};
+			name = Debug;
+		};
+		571B8D67210FB23B00B5C4A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A48B6SCJ2L;
+				INFOPLIST_FILE = nmg_ios_redux_stateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pathoz.touchstone.nmg-ios-redux-stateTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nmg_ios_redux_state.app/nmg_ios_redux_state";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -853,6 +963,15 @@
 			buildConfigurations = (
 				57164E5A2101040200F4E76F /* Debug */,
 				57164E5B2101040200F4E76F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		571B8D65210FB23B00B5C4A7 /* Build configuration list for PBXNativeTarget "nmg_ios_redux_stateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				571B8D66210FB23B00B5C4A7 /* Debug */,
+				571B8D67210FB23B00B5C4A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
