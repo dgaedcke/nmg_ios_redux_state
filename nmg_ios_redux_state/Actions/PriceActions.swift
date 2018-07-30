@@ -10,9 +10,12 @@ import ReSwift
 
 
 enum StPriceAction: Action {
-	// 
-	case priceIncreased(String)	// assetKey
-	case priceDecreased(String) // assetKey
-	case priceToZero(String)	// teamID (spans many events when team loses/eliminated)
+	// from DB
+	case priceUpdated(TeamPrice)
+	
+	// from reducer
+	case priceIncreased(TeamPrice)	// assetKey
+	case priceDecreased(TeamPrice) // assetKey
+	case priceToZero(NTA.TeamID)	// teamID (spans many events when team loses/eliminated)
 	
 }

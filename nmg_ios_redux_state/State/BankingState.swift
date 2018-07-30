@@ -8,7 +8,7 @@
 
 import ReSwift
 
-struct BankingState: StateType {
+struct BankingState: StateType, Equatable {
 	/*  user account balances & config for adding/removing money
 	*/
 	let coinBalance:Int

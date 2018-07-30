@@ -18,16 +18,16 @@ protocol PriceChangeDelegateProto {
 }
 
 
-struct TeamPrice:Codable {
+struct TeamPrice:Codable, Equatable {
 	// FIXME:  I am manually decoding this object in TeamPricesApi
 	// so the types are rigid;
 	// each leaf-node from: firebase/eventPrices/someEvent/<teamID>
 	// stored in EventPrices which is stored in TeamPricesApi.shared.prices
-	
-	var teamId = ""		// always uppercased
-	var price:Double = 0.0
-	var delta:Int = 0
-	var asOfDtTm = Date()
+	var eventId:NTA.EventID = ""
+	let teamId:NTA.TeamID		// always uppercased
+	let price:Double
+	let delta:Int
+	let asOfDtTm = Date()
 	
 	var ticker:String {
 		return ""	// AppState.shared.teamFromID(id:teamId).ticker
@@ -35,11 +35,9 @@ struct TeamPrice:Codable {
 	
 	init(teamId:String, data:[String:Double]) {
 		self.teamId = teamId.lowercased()
-		self.price = data["price"] ?? 0.0	// as? Double
-		self.delta = Int(data["delta"] ?? 0.0)
 		// server keeps prices in CENTS to avoid rounding issues
-		self.price = self.price / 100
-		self.delta = self.delta / 100
+		self.price = (data["price"] ?? 0.0) / 100	// as? Double
+		self.delta = Int(data["delta"] ?? 0.0) / 100
 	}
 	
 //	init(currentPrice: Double, recentChange: Double, teamId:String) {

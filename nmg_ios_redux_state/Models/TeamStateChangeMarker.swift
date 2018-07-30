@@ -10,7 +10,7 @@
 
 import Foundation
 
-enum TeamStateChangeMarker:Int, Codable {
+enum TeamStateChangeMarker:Int, Codable, Equatable {
 	case NoChange		// same state as before
 	case NowTradable	// not playing
 	case NowClosed	// not tradable

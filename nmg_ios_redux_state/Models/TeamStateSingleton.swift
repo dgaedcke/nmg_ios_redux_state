@@ -38,7 +38,7 @@ import Foundation
 
 typealias TeamID = String
 
-private struct GameProgress {
+private struct GameProgress: Equatable {
 	/* one game being played by a team
 		we only interrogate the just finished
 		or about to start game to decide what is allowed
@@ -79,7 +79,7 @@ private struct GameProgress {
 	}
 }
 
-private struct TeamState:Codable {
+private struct TeamState:Codable, Equatable {
 	// wrapper for TeamStateMarker enum
 	// and any other team state we need to track
 	// STRUCT replaced each time teamstate changes
@@ -106,7 +106,7 @@ private struct TeamState:Codable {
 }
 
 
-private struct TeamGameTree {
+private struct TeamGameTree: Equatable {
 	/* one rec for each team
 		keeps list of all games
 		keeps pointer to next game
@@ -283,7 +283,7 @@ extension TeamGameTree {
 }
 
 
-struct TeamStateMgr {
+struct TeamStateMgr: Equatable {
 	/*  any time a team has finished their first game and IS NOT
 		currently playing, then they are tradable
 		(deferring quiet period until after March Madness)

@@ -11,7 +11,7 @@ App state divided into the following categories:
 
 import ReSwift
 
-struct AppState: StateType {
+struct AppState: StateType, Equatable {
 
 	let eventsState: EventState
 	let pricesState: PricesState
@@ -23,7 +23,7 @@ struct AppState: StateType {
 //	let leaderboardState: LeaderboardState
 }
 
-struct SettingsState: StateType {
+struct SettingsState: StateType, Equatable {
 	/*  user app settings including:
 		currency (token or coin) mode
 		ticker settings
@@ -34,18 +34,18 @@ struct SettingsState: StateType {
 
 
 
-struct PortfolioState: StateType {
+struct PortfolioState: StateType, Equatable {
 	
 }
 
-struct NotificationState: StateType {
+struct NotificationState: StateType, Equatable {
 	
 }
 
-struct ChatState: StateType {
+struct ChatState: StateType, Equatable {
 	
 }
 
-struct LeaderboardState: StateType {
+struct LeaderboardState: StateType, Equatable {
 	
 }

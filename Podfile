@@ -8,5 +8,7 @@ target 'nmg_ios_redux_state' do
 	platform :ios, '8.0'
 
 	pod 'ReSwift'
+	pod 'PromiseKit'
+	pod 'Alamofire'
 
 end

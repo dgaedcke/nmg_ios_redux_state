@@ -10,7 +10,7 @@ import ReSwift
 
 
 
-struct EventState: StateType {
+struct EventState: StateType, Equatable {
 	/*  which events are open/available
 	current games in play
 	play status for a given game

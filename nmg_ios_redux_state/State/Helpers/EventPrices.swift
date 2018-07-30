@@ -11,7 +11,7 @@
 import Foundation
 
 
-class EventPricesWrapper {
+struct EventPricesWrapper {
 	// first key is the eventID and next is the teamID
 	
 	private var _masterDict = [String:TeamPrice]()
@@ -32,17 +32,17 @@ class EventPricesWrapper {
 		}
 	}
 	
-	func updateEvent(eventID:String, teamPrices:[TeamPrice]) {
-		//
-		if self.all[eventID] == nil {
-			self.all[eventID] = [String:TeamPrice]()
-		}
-		
-		for tp in teamPrices {
-			self.all[eventID]![tp.teamId] = tp
-			self._masterDict[tp.teamId] = tp
-		}
-	}
+//	func updateEvent(eventID:String, teamPrices:[TeamPrice]) {
+//		//
+//		if self.all[eventID] == nil {
+//			self.all[eventID] = [String:TeamPrice]()
+//		}
+//
+//		for tp in teamPrices {
+//			self.all[eventID]![tp.teamId] = tp
+//			self._masterDict[tp.teamId] = tp
+//		}
+//	}
 	
 	func pricesFor(eventID:String) -> [TeamPrice] {
 		//
@@ -72,14 +72,14 @@ class EventPricesWrapper {
 		}
 	}
 	
-	func setTeamEliminated(eventID:String, teamPrice:TeamPrice) -> TeamPrice {
-		// zero out all prices for this team
-		var tp = teamPrice
-		tp.price = 0
-		tp.delta = 0
-		self.updateEvent(eventID: eventID, teamPrices: [tp])
-		return tp
-	}
+//	func setTeamEliminated(eventID:String, teamPrice:TeamPrice) -> TeamPrice {
+//		// zero out all prices for this team
+//		var tp = teamPrice
+//		tp.price = 0
+//		tp.delta = 0
+////		self.updateEvent(eventID: eventID, teamPrices: [tp])
+//		return tp
+//	}
 }
 
 

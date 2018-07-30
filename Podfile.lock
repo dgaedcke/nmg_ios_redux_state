@@ -1,16 +1,32 @@
 PODS:
+  - Alamofire (4.7.3)
+  - PromiseKit (6.3.4):
+    - PromiseKit/CorePromise (= 6.3.4)
+    - PromiseKit/Foundation (= 6.3.4)
+    - PromiseKit/UIKit (= 6.3.4)
+  - PromiseKit/CorePromise (6.3.4)
+  - PromiseKit/Foundation (6.3.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.3.4):
+    - PromiseKit/CorePromise
   - ReSwift (4.0.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - PromiseKit
   - ReSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - PromiseKit
     - ReSwift
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
   ReSwift: f4012c613e13da7398827fe5aebdb938eaed40a3
 
-PODFILE CHECKSUM: 0fb138dd5051681f1bc7b035b5e58c739cf21f60
+PODFILE CHECKSUM: e69293cb777c0bc059ebe62d0f67b5b750846486
 
 COCOAPODS: 1.5.3

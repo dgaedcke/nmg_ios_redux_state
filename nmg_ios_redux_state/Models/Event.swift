@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class Event: Codable {
+class Event: Codable, Equatable {
 	/*  aka tournament
 		
 	*/
@@ -68,7 +68,9 @@ class Event: Codable {
 	static let canUpdate:Bool = false
 	static let canDelete:Bool = false
 	
-
+	static func == (lhs: Event, rhs: Event) -> Bool {
+		return lhs.id == rhs.id
+	}
 }
 
 

@@ -15,7 +15,15 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		store.subscribe(self) { $0.select { state in state.userAndSettingsState } }
+		store.subscribe(self) { (subscription) in
+			subscription.select { (state) in
+				state.userAndSettingsState
+			}
+		}
+	}
+	
+	deinit {
+		store.unsubscribe(self)
 	}
 
 }

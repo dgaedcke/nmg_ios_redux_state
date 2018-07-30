@@ -10,13 +10,19 @@ import ReSwift
 
 
 enum StEventAction: Action {
+	// API updates
+	case eventUpdated(Event)
+	case gameUpdated(Game)
+//	case eventPostponed
+//	case weatherDelay
+	
+	// from reducer
 	case eventStarted(String)
 	case eventEnded(String)
 	case gameStarted(String)
 	case gameEnded(String)
 	case tradingOpened
 	case tradingClosed
-	case eventPostponed
-	case weatherDelay
+
 	
 }

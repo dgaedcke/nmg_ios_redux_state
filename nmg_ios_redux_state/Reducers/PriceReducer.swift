@@ -10,14 +10,16 @@ import ReSwift
 
 func priceReducer(action: Action, state: PricesState?) -> PricesState {
 	
-	let state = state ?? PricesState()
+	var state = state ?? PricesState()
 	
 	guard let specAction = action as? StPriceAction
-		else { return state }
+	else { return state }
 	
 	switch specAction {
-//	case let newCurrency as CurrencyModeChangeAction:
-//		break
+	case .priceUpdated(let tp):
+		state.updateTeamIn(eventID: "", teamPrice: tp)
+	case .priceDecreased(let tp):
+		break
 	default:
 		break
 	}
