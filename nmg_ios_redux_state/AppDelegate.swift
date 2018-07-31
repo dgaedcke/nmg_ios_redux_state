@@ -11,12 +11,14 @@ import ReSwift
 // main state repo
 var store = Store<AppState>(reducer: appReducer, state: nil)
 
+//var store:Store<AppState> {
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	// copy for testing
+	var store:Store<AppState> = Store<AppState>(reducer: appReducer, state: nil)
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.

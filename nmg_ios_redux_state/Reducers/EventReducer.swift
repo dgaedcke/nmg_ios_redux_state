@@ -8,9 +8,9 @@
 
 import ReSwift
 
-func eventReducer(action: Action, state: EventState?) -> EventState {
+func eventReducer(action: Action, state: EventsState?) -> EventsState {
 
-	let state = state ?? EventState()
+	let state = state ?? EventsState()
 	guard let specAction = action as? StEventAction
 		else { return state }
 	

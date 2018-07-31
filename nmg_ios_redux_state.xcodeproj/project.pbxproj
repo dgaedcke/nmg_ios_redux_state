@@ -25,7 +25,7 @@
 		57326B422107EDD800649323 /* TickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B412107EDD800649323 /* TickerSettings.swift */; };
 		57326B442107F70300649323 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B432107F70300649323 /* NotificationAction.swift */; };
 		57326B4C21097E0A00649323 /* NmgTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B4B21097E0A00649323 /* NmgTypeAliases.swift */; };
-		574642EB210660F400FBAE49 /* EventState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* EventState.swift */; };
+		574642EB210660F400FBAE49 /* EventsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* EventsState.swift */; };
 		57474083210ADF2F00B24EAA /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474042210ADF2F00B24EAA /* APIHelper.swift */; };
 		57474084210ADF2F00B24EAA /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */; };
 		57474085210ADF2F00B24EAA /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474045210ADF2F00B24EAA /* UserAPI.swift */; };
@@ -109,6 +109,7 @@
 		57FF68F32106448D00789F20 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EF2106448D00789F20 /* TeamStatus.swift */; };
 		57FF68F5210653D700789F20 /* NotificationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68F4210653D700789F20 /* NotificationReducer.swift */; };
 		7A6F53C8349CC218C2BA2A0E /* Pods_nmg_ios_redux_state.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D885AE0E0A62155D2026F2F /* Pods_nmg_ios_redux_state.framework */; };
+		A1CF66295BFB9271A01104F9 /* Pods_nmg_ios_redux_stateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1215B7D7CE6F3AAC4F59EECC /* Pods_nmg_ios_redux_stateTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +123,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1215B7D7CE6F3AAC4F59EECC /* Pods_nmg_ios_redux_stateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nmg_ios_redux_stateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BAE970E1353810BC895457D /* Pods-nmg_ios_redux_state.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_state.release.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_state/Pods-nmg_ios_redux_state.release.xcconfig"; sourceTree = "<group>"; };
+		41DC36C7F871355216DFDFA5 /* Pods-nmg_ios_redux_stateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_stateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_stateTests/Pods-nmg_ios_redux_stateTests.debug.xcconfig"; sourceTree = "<group>"; };
 		54366410489DB6D2A5C01D7F /* Pods-nmg_ios_redux_state.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_state.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_state/Pods-nmg_ios_redux_state.debug.xcconfig"; sourceTree = "<group>"; };
 		57164E472101040100F4E76F /* nmg_ios_redux_state.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nmg_ios_redux_state.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57164E4A2101040100F4E76F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +149,7 @@
 		57326B412107EDD800649323 /* TickerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSettings.swift; sourceTree = "<group>"; };
 		57326B432107F70300649323 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAction.swift; sourceTree = "<group>"; };
 		57326B4B21097E0A00649323 /* NmgTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmgTypeAliases.swift; sourceTree = "<group>"; };
-		574642EA210660F400FBAE49 /* EventState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventState.swift; sourceTree = "<group>"; };
+		574642EA210660F400FBAE49 /* EventsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsState.swift; sourceTree = "<group>"; };
 		57474042210ADF2F00B24EAA /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		57474045210ADF2F00B24EAA /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -230,6 +233,7 @@
 		57FF68EF2106448D00789F20 /* TeamStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStatus.swift; path = nmg_ios_redux_state/Models/TeamStatus.swift; sourceTree = SOURCE_ROOT; };
 		57FF68F4210653D700789F20 /* NotificationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationReducer.swift; sourceTree = "<group>"; };
 		8D885AE0E0A62155D2026F2F /* Pods_nmg_ios_redux_state.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nmg_ios_redux_state.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77FE3E528495F39A71F1CD8 /* Pods-nmg_ios_redux_stateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nmg_ios_redux_stateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-nmg_ios_redux_stateTests/Pods-nmg_ios_redux_stateTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CF66295BFB9271A01104F9 /* Pods_nmg_ios_redux_stateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +433,7 @@
 			children = (
 				57326B382107EAA700649323 /* Helpers */,
 				5760DE302102AE1500F2207F /* AppState.swift */,
-				574642EA210660F400FBAE49 /* EventState.swift */,
+				574642EA210660F400FBAE49 /* EventsState.swift */,
 				57326B3F2107EB1700649323 /* PricesState.swift */,
 				57326B362107BCEF00649323 /* BankingState.swift */,
 			);
@@ -457,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				8D885AE0E0A62155D2026F2F /* Pods_nmg_ios_redux_state.framework */,
+				1215B7D7CE6F3AAC4F59EECC /* Pods_nmg_ios_redux_stateTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -466,6 +472,8 @@
 			children = (
 				54366410489DB6D2A5C01D7F /* Pods-nmg_ios_redux_state.debug.xcconfig */,
 				3BAE970E1353810BC895457D /* Pods-nmg_ios_redux_state.release.xcconfig */,
+				41DC36C7F871355216DFDFA5 /* Pods-nmg_ios_redux_stateTests.debug.xcconfig */,
+				A77FE3E528495F39A71F1CD8 /* Pods-nmg_ios_redux_stateTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -496,6 +504,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 571B8D65210FB23B00B5C4A7 /* Build configuration list for PBXNativeTarget "nmg_ios_redux_stateTests" */;
 			buildPhases = (
+				29C213B3FB824A38E8B57F0F /* [CP] Check Pods Manifest.lock */,
 				571B8D5A210FB23B00B5C4A7 /* Sources */,
 				571B8D5B210FB23B00B5C4A7 /* Frameworks */,
 				571B8D5C210FB23B00B5C4A7 /* Resources */,
@@ -570,6 +579,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29C213B3FB824A38E8B57F0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nmg_ios_redux_stateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		474C74DAA5E529DF4D0C5347 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -665,7 +692,7 @@
 				574740A3210ADF2F00B24EAA /* ListInternalErrorResponseBody.swift in Sources */,
 				57326B352107B54500649323 /* BankingActions.swift in Sources */,
 				57474085210ADF2F00B24EAA /* UserAPI.swift in Sources */,
-				574642EB210660F400FBAE49 /* EventState.swift in Sources */,
+				574642EB210660F400FBAE49 /* EventsState.swift in Sources */,
 				5747408C210ADF2F00B24EAA /* CodableHelper.swift in Sources */,
 				57326B422107EDD800649323 /* TickerSettings.swift in Sources */,
 				5747408D210ADF2F00B24EAA /* JSONEncodableEncoding.swift in Sources */,
@@ -908,6 +935,7 @@
 		};
 		571B8D66210FB23B00B5C4A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41DC36C7F871355216DFDFA5 /* Pods-nmg_ios_redux_stateTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -928,6 +956,7 @@
 		};
 		571B8D67210FB23B00B5C4A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A77FE3E528495F39A71F1CD8 /* Pods-nmg_ios_redux_stateTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

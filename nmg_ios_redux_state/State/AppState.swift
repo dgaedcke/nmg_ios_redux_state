@@ -13,7 +13,7 @@ import ReSwift
 
 struct AppState: StateType, Equatable {
 
-	let eventsState: EventState
+	let eventsState: EventsState
 	let pricesState: PricesState
 	let userAndSettingsState: SettingsState	// includes the user
 	let bankingState: BankingState
