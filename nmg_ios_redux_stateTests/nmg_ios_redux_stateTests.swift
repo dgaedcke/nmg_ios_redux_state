@@ -13,9 +13,10 @@ import ReSwift
 class nmg_ios_redux_stateTests: XCTestCase {
 	
 	var pendExpectation:XCTestExpectation?
-//	var store:Store<AppState> {
-//		return (UIApplication.shared.delegate as! AppDelegate).store
-//	}
+//	var callbackCount = 0
+	var store:Store<AppState> {
+		return (UIApplication.shared.delegate as! AppDelegate).store
+	}
 	
     override func setUp() {
         super.setUp()
@@ -35,19 +36,22 @@ class nmg_ios_redux_stateTests: XCTestCase {
 	}
 	
     func test_changing_game_state() {
-		//
-		let store = (UIApplication.shared.delegate as! AppDelegate).store
+		// create & store expectation B4 subscribing
+		self.pendExpectation = self.expectation(description: "test_changing_game_state")
+//		print("\(self.pendExpectation?.description ?? "shit")")
+
+		// subscription will cause state to be sent once;  dispatch (below) will cause it to get sent again
+//		let store = (UIApplication.shared.delegate as! AppDelegate).store
 		store.subscribe(self) { (subscription:Subscription) in
 			subscription.select { (state:AppState) in
 				return state.eventsState
 			}
 		}
-		
-		self.pendExpectation = self.expectation(description: "test_changing_game_state")
 
 		let newGame = Game(id: "123", favTeamId: "favID", underTeamId: "underID", sportId: "foot-nfl", eventId: "dgEvent", actualStartDtTm: Date() )
 		let action = StEventAction.gameUpdated(newGame)
 		store.dispatch(action)
+//		print("end store.dispatch")
 		
 		waitForExpectations(timeout: 5, handler: nil)
     }
@@ -56,12 +60,14 @@ class nmg_ios_redux_stateTests: XCTestCase {
 extension nmg_ios_redux_stateTests: StoreSubscriber {
 	
 	func newState(state: EventsState) {
-		
-		switch self.pendExpectation?.description ?? "oops?" {
+//		callbackCount += 1
+		print("got callback:  \(self.pendExpectation?.debugDescription ?? "oops?")")
+		switch self.pendExpectation?.debugDescription ?? "oops?" {
 		case "test_changing_game_state":
+			print("case test_changing_game_state on call \(1)")
 			self.pendExpectation?.fulfill()
-			XCTAssert(true)
 		default:
+			print("break")
 			break
 		}
 	}

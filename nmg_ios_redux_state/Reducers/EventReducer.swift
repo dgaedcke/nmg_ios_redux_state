@@ -10,13 +10,16 @@ import ReSwift
 
 func eventReducer(action: Action, state: EventsState?) -> EventsState {
 
-	let state = state ?? EventsState()
-	guard let specAction = action as? StEventAction
-		else { return state }
+	var state = state ?? EventsState()
+	guard let eventAction = action as? StEventAction
+	else {
+		print("wrong action type for eventReducer  \(action)")
+		return state
+	}
 	
-	switch specAction {
-//	case let newCurrency as CurrencyModeChangeAction:
-//		break
+	switch eventAction {	// as! StEventAction
+	case .gameUpdated(let updatedGame):
+		state.teamStateMgr.updateState(teams: [], games: [updatedGame])
 	default:
 		break
 	}
