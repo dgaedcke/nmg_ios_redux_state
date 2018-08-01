@@ -280,6 +280,10 @@ extension TeamGameTree {
 			return .preGame
 		}
 	}
+	
+	func containsGame(id:String) -> Bool {
+		return self.gameTree.filter( {$0.game.id == id}).count > 0
+	}
 }
 
 
@@ -318,6 +322,27 @@ struct TeamStateMgr: Equatable {
 				teamMap[t.id] =  TeamGameTree(teamID: t.id, games: games)
 			}
 		}
+	}
+	
+	mutating func updateGameState(games:[Game]) {
+		// 1-n games each time
+		for g in games {
+//			let gp = GameProgress.init(game: g)
+			if var _ = teamMap[g.favTeamId] {
+				teamMap[g.favTeamId]?.refresh(games: [g])
+			} else {
+				let tgt = TeamGameTree(teamID: g.favTeamId, games: [g])
+				teamMap[g.favTeamId] = tgt
+			}
+			if var _ = teamMap[g.underTeamId] {
+				teamMap[g.underTeamId]?.refresh(games: [g])
+			} else {
+				let tgt = TeamGameTree(teamID: g.underTeamId, games: [g])
+				teamMap[g.underTeamId] = tgt
+			}
+		}
+		print("Just updated updateGameState")
+		print(teamMap)
 	}
 	
 	mutating func clearState() {
@@ -390,7 +415,19 @@ extension TeamStateMgr {
 		// specifically means unplayed or unfinished (ongoing) game
 		return getTree(teamID:teamID).nextUnfinishedGameProgress?.game
 	}
+	
+	func containsGame(id:String) -> Bool {
+		// see if game was stored
+		print("teamMap count: \(teamMap.count)")
+		for (id, tgt) in self.teamMap {
+			if tgt.containsGame(id: id) {
+				return true
+			}
+		}
+		return false
+	}
 }
+
 
 private func returnGameTreeAndNextIdx(teamID:TeamID, games:[Game]) -> ([GameProgress], Int?) {
 	// next index is pointer to game about to start

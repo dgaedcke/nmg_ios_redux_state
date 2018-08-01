@@ -28,4 +28,12 @@ struct EventsState: StateType, Equatable {
 		// facade over teamStateMgr
 		teamStateMgr.updateState(teams: teams, games: games)
 	}
+	
+	mutating func updateGameState(games:[Game]) {
+		teamStateMgr.updateGameState(games: games)
+	}
+	
+	func containsGame(id:String) -> Bool {
+		return teamStateMgr.containsGame(id:id)
+	}
 }

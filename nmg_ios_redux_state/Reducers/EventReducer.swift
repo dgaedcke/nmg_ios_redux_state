@@ -19,7 +19,7 @@ func eventReducer(action: Action, state: EventsState?) -> EventsState {
 	
 	switch eventAction {	// as! StEventAction
 	case .gameUpdated(let updatedGame):
-		state.teamStateMgr.updateState(teams: [], games: [updatedGame])
+		state.teamStateMgr.updateGameState(games: [updatedGame])
 	default:
 		break
 	}

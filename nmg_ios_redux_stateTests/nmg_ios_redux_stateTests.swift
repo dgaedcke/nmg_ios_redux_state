@@ -65,7 +65,9 @@ extension nmg_ios_redux_stateTests: StoreSubscriber {
 		switch self.pendExpectation?.debugDescription ?? "oops?" {
 		case "test_changing_game_state":
 			print("case test_changing_game_state on call \(1)")
-			self.pendExpectation?.fulfill()
+			if state.containsGame(id: "123") {
+				self.pendExpectation?.fulfill()
+			}
 		default:
 			print("break")
 			break
