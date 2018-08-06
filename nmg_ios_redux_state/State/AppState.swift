@@ -12,7 +12,8 @@ App state divided into the following categories:
 import ReSwift
 
 struct AppState: StateType, Equatable {
-
+	// all state for entire app is nested under here
+	var entityRecs: CoreEntityRepo = CoreEntityRepo.shared
 	let eventsState: EventsState
 	let pricesState: PricesState
 	let userAndSettingsState: SettingsState	// includes the user

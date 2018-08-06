@@ -41,7 +41,6 @@ class nmg_ios_redux_stateTests: XCTestCase {
 //		print("\(self.pendExpectation?.description ?? "shit")")
 
 		// subscription will cause state to be sent once;  dispatch (below) will cause it to get sent again
-//		let store = (UIApplication.shared.delegate as! AppDelegate).store
 		store.subscribe(self) { (subscription:Subscription) in
 			subscription.select { (state:AppState) in
 				return state.eventsState

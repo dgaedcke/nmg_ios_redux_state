@@ -4,6 +4,7 @@ import ReSwift
 func appReducer(action: Action, state: AppState?) -> AppState {
 	// 
 	return AppState(
+		entityRecs: coreEntityReducer(action: action, state: state?.entityRecs),
 		eventsState: eventReducer(action: action, state: state?.eventsState),
 		pricesState: priceReducer(action: action, state: state?.pricesState),
 		userAndSettingsState: settingsReducer(action:action, state: state?.userAndSettingsState),
