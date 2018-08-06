@@ -8,18 +8,18 @@
 
 import ReSwift
 
+
 func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo {
-	
+	// 
 	var state = state ?? CoreEntityRepo.shared
-	guard let eventAction = action as? StEventAction
-		else {
-			print("wrong action type for eventReducer  \(action)")
-			return state
-	}
-	
-	switch eventAction {
-	case .gameUpdated(let updatedGame):
+	switch action {
+	case StEventAction.gameUpdated(let updatedGame):
 		state.updateObj(rec: updatedGame)
+	case StEventAction.eventUpdated(let event):
+		state.updateObj(rec: event)
+		
+//	case StEventAction.teamUpdated(let team):
+//		state.updateObj(rec: team)
 	default:
 		break
 	}

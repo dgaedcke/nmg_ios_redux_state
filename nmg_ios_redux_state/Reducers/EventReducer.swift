@@ -9,7 +9,7 @@
 import ReSwift
 
 func eventReducer(action: Action, state: EventsState?) -> EventsState {
-
+	// 
 	var state = state ?? EventsState()
 	guard let eventAction = action as? StEventAction
 	else {

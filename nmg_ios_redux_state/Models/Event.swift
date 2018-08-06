@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class Event: Codable, Equatable {
+class Event: Codable, Equatable, StateObj {
 	/*  aka tournament
 		
 	*/

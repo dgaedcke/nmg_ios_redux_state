@@ -12,6 +12,8 @@ import ReSwift
 
 class ViewController: UIViewController {
 
+	var currentGameID = "123"
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -39,5 +41,10 @@ extension ViewController: StoreSubscriber {
 //		case let .finished(films):
 //
 //		}
+		
+		if let gameToRender:Game = store.getLatest(id: self.currentGameID) {
+			// an example of reading directly from the store.state struct
+			
+		}
 	}
 }

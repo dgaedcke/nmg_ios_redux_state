@@ -13,6 +13,7 @@ enum StEventAction: Action {
 	// API updates
 	case eventUpdated(Event)
 	case gameUpdated(Game)
+	case teamUpdated(Team)
 //	case eventPostponed
 //	case weatherDelay
 	

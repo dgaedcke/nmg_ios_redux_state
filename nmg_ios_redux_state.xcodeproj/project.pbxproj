@@ -102,6 +102,7 @@
 		5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3A2102B28D00F2207F /* SettingsReducer.swift */; };
 		5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* SettingsActions.swift */; };
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
+		57BB90DB211900C500DA2B00 /* TeamStateMgr2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamStateMgr2.swift */; };
 		57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */; };
 		57FD2ED02118BBC200B93CAC /* CoreEntityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */; };
 		57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68E8210631FD00789F20 /* BankingReducer.swift */; };
@@ -229,6 +230,7 @@
 		5760DE3A2102B28D00F2207F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		5760DE3C2102B3FF00F2207F /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
+		57BB90DA211900C500DA2B00 /* TeamStateMgr2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStateMgr2.swift; sourceTree = "<group>"; };
 		57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreApiExtensions.swift; sourceTree = "<group>"; };
 		57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityReducer.swift; sourceTree = "<group>"; };
 		57FF68E8210631FD00789F20 /* BankingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingReducer.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		57326B382107EAA700649323 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				57BB90DA211900C500DA2B00 /* TeamStateMgr2.swift */,
 				57326B3B2107EAD900649323 /* EventPrices.swift */,
 				57326B392107EAD900649323 /* TeamPrices.swift */,
 				57326B3A2107EAD900649323 /* TeamPricesApi.swift */,
@@ -663,6 +666,7 @@
 				5760DE2D2102AA5700F2207F /* Holding.swift in Sources */,
 				574740B8210ADF2F00B24EAA /* LoadResponseBody.swift in Sources */,
 				5760DE372102B0E200F2207F /* EventReducer.swift in Sources */,
+				57BB90DB211900C500DA2B00 /* TeamStateMgr2.swift in Sources */,
 				5747408A210ADF2F00B24EAA /* PortfolioAPI.swift in Sources */,
 				5760DE2F2102AA5700F2207F /* Team.swift in Sources */,
 				57474091210ADF2F00B24EAA /* AddResponseBody.swift in Sources */,

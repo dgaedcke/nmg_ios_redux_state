@@ -67,6 +67,7 @@ extension nmg_ios_redux_stateTests: StoreSubscriber {
 			if state.containsGame(id: "123") {
 				self.pendExpectation?.fulfill()
 			}
+
 		default:
 			print("break")
 			break
