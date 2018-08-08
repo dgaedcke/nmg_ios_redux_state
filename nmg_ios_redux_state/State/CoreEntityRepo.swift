@@ -14,6 +14,7 @@ protocol StateObj {
 	var id:String {get}
 }
 
+
 private enum ModelType {
 	case sport(Sport)
 	case event(Event)

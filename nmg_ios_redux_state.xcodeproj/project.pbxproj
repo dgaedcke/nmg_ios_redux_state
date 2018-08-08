@@ -102,13 +102,14 @@
 		5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3A2102B28D00F2207F /* SettingsReducer.swift */; };
 		5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* SettingsActions.swift */; };
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
+		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
 		57BB90DB211900C500DA2B00 /* TeamStateMgr2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamStateMgr2.swift */; };
 		57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */; };
 		57FD2ED02118BBC200B93CAC /* CoreEntityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */; };
 		57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68E8210631FD00789F20 /* BankingReducer.swift */; };
 		57FF68EB21063D2C00789F20 /* PortfolioReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EA21063D2C00789F20 /* PortfolioReducer.swift */; };
 		57FF68F02106448D00789F20 /* TeamStateSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EC2106448D00789F20 /* TeamStateSingleton.swift */; };
-		57FF68F12106448D00789F20 /* TeamStateChangeMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68ED2106448D00789F20 /* TeamStateChangeMarker.swift */; };
+		57FF68F12106448D00789F20 /* TeamStateMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68ED2106448D00789F20 /* TeamStateMarker.swift */; };
 		57FF68F22106448D00789F20 /* GameCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EE2106448D00789F20 /* GameCollection.swift */; };
 		57FF68F32106448D00789F20 /* TeamStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EF2106448D00789F20 /* TeamStatus.swift */; };
 		57FF68F5210653D700789F20 /* NotificationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68F4210653D700789F20 /* NotificationReducer.swift */; };
@@ -230,13 +231,14 @@
 		5760DE3A2102B28D00F2207F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		5760DE3C2102B3FF00F2207F /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
+		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
 		57BB90DA211900C500DA2B00 /* TeamStateMgr2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStateMgr2.swift; sourceTree = "<group>"; };
 		57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreApiExtensions.swift; sourceTree = "<group>"; };
 		57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityReducer.swift; sourceTree = "<group>"; };
 		57FF68E8210631FD00789F20 /* BankingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingReducer.swift; sourceTree = "<group>"; };
 		57FF68EA21063D2C00789F20 /* PortfolioReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioReducer.swift; sourceTree = "<group>"; };
 		57FF68EC2106448D00789F20 /* TeamStateSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStateSingleton.swift; path = nmg_ios_redux_state/Models/TeamStateSingleton.swift; sourceTree = SOURCE_ROOT; };
-		57FF68ED2106448D00789F20 /* TeamStateChangeMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStateChangeMarker.swift; path = nmg_ios_redux_state/Models/TeamStateChangeMarker.swift; sourceTree = SOURCE_ROOT; };
+		57FF68ED2106448D00789F20 /* TeamStateMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStateMarker.swift; path = nmg_ios_redux_state/Models/TeamStateMarker.swift; sourceTree = SOURCE_ROOT; };
 		57FF68EE2106448D00789F20 /* GameCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameCollection.swift; path = nmg_ios_redux_state/Models/GameCollection.swift; sourceTree = SOURCE_ROOT; };
 		57FF68EF2106448D00789F20 /* TeamStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStatus.swift; path = nmg_ios_redux_state/Models/TeamStatus.swift; sourceTree = SOURCE_ROOT; };
 		57FF68F4210653D700789F20 /* NotificationReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationReducer.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				57326B3F2107EB1700649323 /* PricesState.swift */,
 				57326B362107BCEF00649323 /* BankingState.swift */,
 				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
+				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -456,7 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				57FF68EE2106448D00789F20 /* GameCollection.swift */,
-				57FF68ED2106448D00789F20 /* TeamStateChangeMarker.swift */,
+				57FF68ED2106448D00789F20 /* TeamStateMarker.swift */,
 				57FF68EC2106448D00789F20 /* TeamStateSingleton.swift */,
 				57FF68EF2106448D00789F20 /* TeamStatus.swift */,
 				5760DE272102AA5700F2207F /* Event.swift */,
@@ -656,7 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FF68F12106448D00789F20 /* TeamStateChangeMarker.swift in Sources */,
+				57FF68F12106448D00789F20 /* TeamStateMarker.swift in Sources */,
 				57474095210ADF2F00B24EAA /* BasicResponseBody.swift in Sources */,
 				57474092210ADF2F00B24EAA /* ListRequestBody.swift in Sources */,
 				5760DE2C2102AA5700F2207F /* Event.swift in Sources */,
@@ -699,6 +702,7 @@
 				574740A6210ADF2F00B24EAA /* BasicInternalErrorResponseBody.swift in Sources */,
 				57326B402107EB1700649323 /* PricesState.swift in Sources */,
 				5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */,
+				57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */,
 				574740B0210ADF2F00B24EAA /* PositionsInternalErrorResponseBody.swift in Sources */,
 				57474097210ADF2F00B24EAA /* SummaryRequestBody.swift in Sources */,
 				5747408F210ADF2F00B24EAA /* SummarymsgResponseBody.swift in Sources */,

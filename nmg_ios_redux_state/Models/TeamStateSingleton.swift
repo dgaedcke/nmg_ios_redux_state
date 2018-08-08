@@ -61,7 +61,7 @@ struct GameProgress: Equatable {
 		return isOver && game.winnerTeamId == teamID
 	}
 	
-	func relatedState(teamID: TeamID) -> TeamStateChangeMarker {
+	func relatedState(teamID: TeamID) -> TeamStateMarker {
 		// need to run this on last completed game
 		if isOver {
 			if didWin(teamID: teamID) {
@@ -84,9 +84,9 @@ struct TeamState:Codable, Equatable {
 	// and any other team state we need to track
 	// STRUCT replaced each time teamstate changes
 	
-	let teamState:TeamStateChangeMarker
+	let teamState:TeamStateMarker
 	
-	func compare(newTeamStateMarker:TeamStateChangeMarker) -> TeamState {
+	func compare(newTeamStateMarker:TeamStateMarker) -> TeamState {
 		// self is priorTeamState
 		// take new state from a GameProgress
 		// and return a new instance of TeamState
