@@ -20,7 +20,7 @@ struct TeamStateMgr2 {	// : Equatable
 	// singleton to avoid replacing everything each time
 	static let shared = TeamStateMgr2()
 	
-	var teamIdMap = [String:TeamGameTree]()
+	var teamIdMap = [String:TeamGameHistory]()
 	
 	private init() {
 		//
@@ -65,7 +65,7 @@ extension TeamStateMgr2 {
 }
 
 
-struct TeamGameTree: Equatable {
+struct TeamGameHistory: Equatable {
 	/* one rec for each team
 	keeps list of all games
 	keeps pointer to next game
@@ -134,7 +134,7 @@ struct TeamGameTree: Equatable {
 	}
 }
 
-extension TeamGameTree {
+extension TeamGameHistory {
 	/* fileprivate API
 	
 	If not eliminated in any prior games:
@@ -203,7 +203,7 @@ extension TeamGameTree {
 	}
 }
 
-extension TeamGameTree {
+extension TeamGameHistory {
 	// public API to TeamStateMgr  (plus init & refresh above)
 	
 	var isTradable:Bool {
