@@ -134,43 +134,43 @@ private struct TeamGameTree: Equatable {
 		transitions
 		*/
 
-		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:self.teamID, games:games)
-		self.gameTree = gt
-		self.nextUnfinishedGameProgIdx = ngi
+//		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:self.teamID, games:games)
+//		self.gameTree = gt
+//		self.nextUnfinishedGameProgIdx = ngi
 
-		if let idx = ngi, gt.count > 0 && idx != gt.count - 1 {
-			// there are games but the next unstarted one is NOT the last one
-			// major red flag to this logic
-			print("ERR:  \(teamID) has games after next game!!")
-		}
-
-		if self.wasEliminated {
-			// no need to track this team any more
-			return
-		}
-
-		if let nextGP = self.lastGameProgress {
-			let rs = nextGP.relatedState(teamID: teamID)
-			self.currentTeamState = self.currentTeamState.compare(newTeamStateMarker: rs)
-			self.wasEliminated = rs == .NowWorthless
-		}
-		// broadcast any change in state
-		self.currentTeamState.notify(teamID: self.teamID)
+//		if let idx = ngi, gt.count > 0 && idx != gt.count - 1 {
+//			// there are games but the next unstarted one is NOT the last one
+//			// major red flag to this logic
+//			print("ERR:  \(teamID) has games after next game!!")
+//		}
+//
+//		if self.wasEliminated {
+//			// no need to track this team any more
+//			return
+//		}
+//
+//		if let nextGP = self.lastGameProgress {
+//			let rs = nextGP.relatedState(teamID: teamID)
+//			self.currentTeamState = self.currentTeamState.compare(newTeamStateMarker: rs)
+//			self.wasEliminated = rs == .NowWorthless
+//		}
+//		// broadcast any change in state
+//		self.currentTeamState.notify(teamID: self.teamID)
 	}
 
 	init(teamID:TeamID, games:[Game]) {
 		self.teamID = teamID
 
-		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:teamID, games:games)
-		self.gameTree = gt
-		self.nextUnfinishedGameProgIdx = ngi
-
-		if let ngi = ngi, ngi < gt.count {
-			// there is a next game
-			let nextGP = gt[ngi]
-			self.currentTeamState = TeamState(teamState: nextGP.relatedState(teamID: teamID))
-			self.wasEliminated = currentTeamState.teamState == .NowWorthless
-		} // otherwise leave .NoChange
+//		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:teamID, games:games)
+//		self.gameTree = gt
+//		self.nextUnfinishedGameProgIdx = ngi
+//
+//		if let ngi = ngi, ngi < gt.count {
+//			// there is a next game
+//			let nextGP = gt[ngi]
+//			self.currentTeamState = TeamState(teamState: nextGP.relatedState(teamID: teamID))
+//			self.wasEliminated = currentTeamState.teamState == .NowWorthless
+//		} // otherwise leave .NoChange
 		// no change on init so not calling notify here
 	}
 }
@@ -429,28 +429,28 @@ extension TeamStateMgr {
 }
 
 
-func returnGameTreeAndNextIdx(teamID:TeamID, games:[Game]) -> ([GameProgress], Int?) {
-	// next index is pointer to game about to start
-	// this should ALWAYS be the last game in list (or not exist) because
-	// new games not created until outcome of prior game is known
-	// called by TeamGameTree init & refresh
-	
-	var relatedGames = games.filter( {$0.favTeamId == teamID || $0.underTeamId == teamID} )
-	// sort from soonest to farthest out (ascending order)
-	relatedGames.sort(by: { (g1, g2) in g1.scheduledStartDtTm < g2.scheduledStartDtTm } )
-	
-	var gameTree = [GameProgress]()
-	var idxOfGameAfterLastEndedGame:Int?
-	var nextUnstartedGameFound = false
-	for g in relatedGames {
-		gameTree.append(GameProgress(game:g))
-		// remember index of the current/next unfinished game
-		if !nextUnstartedGameFound && !g.isOver {
-			idxOfGameAfterLastEndedGame = gameTree.count - 1
-			nextUnstartedGameFound = true
-		}
-	}
-	return (gameTree, idxOfGameAfterLastEndedGame)
-}
+//func returnGameTreeAndNextIdx(teamID:TeamID, games:[Game]) -> ([GameProgress], Int?) {
+//	// next index is pointer to game about to start
+//	// this should ALWAYS be the last game in list (or not exist) because
+//	// new games not created until outcome of prior game is known
+//	// called by TeamGameTree init & refresh
+//
+//	var relatedGames = games.filter( {$0.favTeamId == teamID || $0.underTeamId == teamID} )
+//	// sort from soonest to farthest out (ascending order)
+//	relatedGames.sort(by: { (g1, g2) in g1.scheduledStartDtTm < g2.scheduledStartDtTm } )
+//
+//	var gameTree = [GameProgress]()
+//	var idxOfGameAfterLastEndedGame:Int?
+//	var nextUnstartedGameFound = false
+//	for g in relatedGames {
+//		gameTree.append(GameProgress(game:g))
+//		// remember index of the current/next unfinished game
+//		if !nextUnstartedGameFound && !g.isOver {
+//			idxOfGameAfterLastEndedGame = gameTree.count - 1
+//			nextUnstartedGameFound = true
+//		}
+//	}
+//	return (gameTree, idxOfGameAfterLastEndedGame)
+//}
 
 

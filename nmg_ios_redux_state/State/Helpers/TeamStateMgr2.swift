@@ -16,9 +16,10 @@ import Foundation
 
 */
 
-struct TeamStateMgr2 {	// : Equatable
+class TeamStateMgr2 {	// : Equatable
 	// singleton to avoid replacing everything each time
-	static let shared = TeamStateMgr2()
+	// team can be a player in fantasy
+	static var shared = TeamStateMgr2()
 	
 	var teamIdMap = [String:TeamPlayHistory]()
 	
@@ -40,34 +41,34 @@ struct TeamStateMgr2 {	// : Equatable
 extension TeamStateMgr2 {
 	// public API for event-state
 	
-	mutating func update(event:Event) {
+	func update(event:Event) {
 		
 	}
 	
-	mutating func start(event:Event) {
+	func start(event:Event) {
 		
 	}
 	
-	mutating func end(event:Event) {
+	func end(event:Event) {
 		
 	}
 	
 	// public API for game-state
 	
-	mutating func update(game:Game) {
+	func update(game:Game) {
 		
 	}
 	
-	mutating func start(game:Game) {
+	func start(game:Game) {
 		
 	}
 	
-	mutating func end(game:Game) {
+	func end(game:Game) {
 		
 	}
 	
 	// public API for team-score
-	mutating func update(teamID:String, scoreDelta:Int, newScore:Int?) {
+	func update(teamID:String, scoreDelta:Int, newScore:Int?) {
 		
 	}
 
@@ -90,38 +91,36 @@ enum TeamPlayState {
 	case eliminated
 }
 
+struct PerformanceEvent {
+	// when team/player does something good or bad
+	let code:String	// touchdown, passComplete, interception
+	let points:Int	// pos or neg
+	var positive:Bool {
+		return points > 0	// true if points is positive
+	}
+}
+
 struct TeamPlayHistory {	// Equatable
 	/* one rec for each team / event combo
 	keeps list of all games
 	*/
 	let eventID:TeamID	// string
 	let teamID:TeamID
-	// shared object that can read other parts of state from deep in the tree
-	let storeLookup:StateAccessProxyProtocol = StateAccessProxy.shared
-	var currentScore:Int = 0	// always includes lastGameResult.earned(points)
-	var currentState:TeamPlayState = .waiting
-	var lastPlayResult:LastPlayResult = .prePlay
+	// shared object (singleton) that can read other parts of state from deep in the tree
+	fileprivate let storeLookup:StateAccessProxyProtocol = StateAccessProxy.shared
+	fileprivate var currentScore:Int = 0	// always includes lastGameResult.earned(points)
+	fileprivate var currentState:TeamPlayState = .waiting
+	fileprivate var lastPlayResult:LastPlayResult = .prePlay
 	// list of all games for each team
 	// sorted into startDtTm order with last (most recent) game at bottom
-	var playHistory:[GameProgress] = []
+	fileprivate var playHistory:[Game] = []
+	fileprivate var performHistory:[PerformanceEvent] = []	//
 	
-	init(eventID:TeamID, teamID:TeamID, games:[Game]) {
+	init(eventID:TeamID, teamID:TeamID, games:[Game] = []) {
 		self.eventID = eventID
 		self.teamID = teamID
-		
-		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:teamID, games:games)
-		self.playHistory = gt
-		
-		if let ngi = ngi, ngi < gt.count {
-			// there is a next game
-			let nextGP = gt[ngi]
-			self.currentState = .waiting
-		} // otherwise leave .NoChange
-		// no change on init so not calling notify here
-	}
-	
-	var key:String {
-		return TeamStateMgr2.makeHistoryKeyFrom(eventID: eventID, teamID: teamID)
+		assert(true, "last game should start AFTER n-1 game")
+		self.playHistory = games.sorted(by: { (g1, g2) in g1.scheduledStartDtTm < g2.scheduledStartDtTm } )
 	}
 }
 
@@ -139,33 +138,53 @@ extension TeamPlayHistory {
 	their next game IS IN Tradable state
 	*/
 	
-	var nextUnfinishedGameProgress:GameProgress? {
-		guard let nuf = nextUnfinishedGameProgIdx, nuf < playHistory.count else {
+	private var firstCompletedGameIdx:Int? {
+		guard playHistory.count > 0 else { return nil }
+		
+		let firstGame = playHistory[0]
+		if false {	// firstGame.gameState.isEnded {
+			return 0
+		} else {
 			return nil
 		}
-		return playHistory[nuf]
 	}
 	
-	fileprivate var lastGameProgress:GameProgress? {
-		/*  rename to lastUnfinishedGameProgress and use
-		when last gameProg == lastCompletedGameProgress
-		it would be better (faster, cleaner, more accurate) to return nil
-		but that needs to be tested first
-		*/
-		guard playHistory.count > 0 else { return nil }
-		return playHistory[playHistory.count - 1]
-	}
-	
-	fileprivate var lastCompletedGameProgress:GameProgress? {
-		// back up from end of list (most recent) until
-		// you find an ended game;  should always be the last or 2nd to last entry
-		for gp in self.playHistory.reversed() {
-			if gp.isOver {
-				return gp
+	private var lastCompletedGameIdx:Int? {
+		for (i, g) in self.playHistory.reversed().enumerated() {
+			if g.isOver {
+				return playHistory.count - (i + 1)
 			}
 		}
 		return nil
 	}
+	
+//	var nextUnfinishedGameProgress:GameProgress? {
+//		guard let nuf = nextUnfinishedGameProgIdx, nuf < playHistory.count else {
+//			return nil
+//		}
+//		return playHistory[nuf]
+//	}
+//
+//	fileprivate var lastGameProgress:GameProgress? {
+//		/*  rename to lastUnfinishedGameProgress and use
+//		when last gameProg == lastCompletedGameProgress
+//		it would be better (faster, cleaner, more accurate) to return nil
+//		but that needs to be tested first
+//		*/
+//		guard playHistory.count > 0 else { return nil }
+//		return playHistory[playHistory.count - 1]
+//	}
+//
+//	fileprivate var lastCompletedGameProgress:GameProgress? {
+//		// back up from end of list (most recent) until
+//		// you find an ended game;  should always be the last or 2nd to last entry
+//		for gp in self.playHistory.reversed() {
+//			if gp.isOver {
+//				return gp
+//			}
+//		}
+//		return nil
+//	}
 	
 	var _allowLiquidationSale:Bool {
 		/*  Liquidation Sale:
@@ -177,81 +196,68 @@ extension TeamPlayHistory {
 		ONLY check this method for internal isTradable test
 		*/
 		
-		guard let lcgp = lastCompletedGameProgress
-			, lcgp.didWin(teamID: self.teamID)
+		guard let lcgp = lastCompletedGame
+			// , lcgp.didWin(teamID: self.teamID)
 			else { return false}
 		
-		guard let nextGame = nextUnfinishedGameProgress else {
+		guard let nextGame = nextScheduledGame else {
 			// no next game yet; so yes, they can liquidate
 			return true
 		}
 		return true	// nextGame.game.gameStatus == .preGame
 	}
 	
-	fileprivate var isCurrentlyPlaying:Bool {
-		guard let ngp = self.lastGameProgress else { return false }
-		return ngp.playInProgress
-	}
+//	fileprivate var isCurrentlyPlaying:Bool {
+//		guard let ngp = self.lastGameProgress else { return false }
+//		return ngp.playInProgress
+//	}
 }
 
 extension TeamPlayHistory {
 	// public API (plus init & refresh above)
 	
-	var nextScheduledGame:Game? {
-		return lastCompletedGame
+	var key:String {
+		return TeamStateMgr2.makeHistoryKeyFrom(eventID: eventID, teamID: teamID)
 	}
 	
 	var lastCompletedGame:Game? {
-		for g in self.playHistory.reversed() {
-			if g.isOver {
-				return g.game
-			}
+		if let lcgi = lastCompletedGameIdx {
+			return playHistory[lcgi]
 		}
 		return nil
+	}
+	
+	var nextScheduledGame:Game? {
+		// aka UNCOMPLETED game
+		guard let lcgi = lastCompletedGameIdx, lcgi < playHistory.count - 1
+		else {	// game at end of list is completed
+			return nil
+		}
+		return playHistory[lcgi + 1]
+	}
+	
+	var lastScheduledGame:Game? {
+		// aka UNCOMPLETED game
+		guard let lcgi = lastCompletedGameIdx, lcgi < playHistory.count - 1
+			else {	// game at end of list is completed
+				return nil
+		}
+		return playHistory[playHistory.count-1]
 	}
 	
 	var wasEliminated:Bool {
 		if let lcg = lastCompletedGame {
 			return false
 		}
-		return true
-	}
-	
-	/*  nextUnfinishedGameProgIdx was designed to track the game immediately following
-	the last ended game;  sometimes it exists, sometimes it does not
-	*/
-	var nextUnfinishedGameProgIdx:Int? {
-		// // location of next unfinished game in gameTree
-		return 0
+		return true	// lcg.wasEliminated
 	}
 	
 	// init & refresh are used by TeamStateMgr
-	mutating func refresh(games: [Game]) {
+	func refresh(games: [Game]) {
 		/*  how do I know when to look at next game vs prior game to detect state
-		transitions
+			transitions
 		*/
 		
-		let (gt, ngi) = returnGameTreeAndNextIdx(teamID:self.teamID, games:games)
-		self.playHistory = gt
-//		self.nextUnfinishedGameProgIdx = ngi
-		
-		if let idx = ngi, gt.count > 0 && idx != gt.count - 1 {
-			// there are games but the next unstarted one is NOT the last one
-			// major red flag to this logic
-			print("ERR:  \(teamID) has games after next game!!")
-		}
-		
-		if self.wasEliminated {
-			// no need to track this team any more
-			return
-		}
-		
-		if let nextGP = self.lastGameProgress {
-			let rs = nextGP.relatedState(teamID: teamID)
-//			self.currentState = self.currentState.compare(newTeamStateMarker: rs)
-		}
-		// broadcast any change in state
-//		self.currentState.notify(teamID: self.teamID)
 	}
 	
 	
@@ -264,8 +270,8 @@ extension TeamPlayHistory {
 			return false
 		}
 		
-		if let ng = nextUnfinishedGameProgress {
-			return ng.isTradable
+		if let ng = nextScheduledGame {
+			return true // fixme
 		} else {
 			return false
 		}
@@ -282,7 +288,7 @@ extension TeamPlayHistory {
 	}
 	
 	var lastGameState:GamePlayStatus {
-		if let lastGP = self.lastGameProgress {
+		if let lastGP = self.nextScheduledGame {
 			return .preGame		// lastGP.game.gameStatus
 		} else {
 			return .preGame
@@ -290,7 +296,7 @@ extension TeamPlayHistory {
 	}
 	
 	func containsGame(id:String) -> Bool {
-		return self.playHistory.filter( {$0.game.id == id}).count > 0
+		return self.playHistory.filter( {$0.id == id}).count > 0
 	}
 }
 
