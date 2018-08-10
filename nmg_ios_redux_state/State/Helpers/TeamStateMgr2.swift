@@ -20,11 +20,11 @@ class TeamStateMgr2 {	// : Equatable
 	// singleton to avoid replacing everything each time
 	// team can be a player in fantasy
 	static var shared = TeamStateMgr2()
-	
-	var teamIdMap = [String:TeamPlayHistory]()
+	// key is from makeHistoryKeyFrom(eventID, teamID)
+	var teamHistMap = [String:TeamPlayHistory]()
 	
 	private init() {
-		//
+		// only one instance
 	}
 	
 	static func makeHistoryKeyFrom(eventID:String, teamID:String) -> String {
@@ -39,24 +39,38 @@ class TeamStateMgr2 {	// : Equatable
 
 
 extension TeamStateMgr2 {
+	
+	// public API for team details & team-score
+	func update(team:Team) {
+		
+	}
+	
+	func update(teamID:String, scoreDelta:Int, newScore:Int?) {
+		
+	}
+	
+	
 	// public API for event-state
 	
-	func update(event:Event) {
-		
-	}
-	
-	func start(event:Event) {
-		
-	}
-	
-	func end(event:Event) {
-		
-	}
+//	func update(event:Event) {
+//
+//	}
+//
+//	func start(event:Event) {
+//
+//	}
+//
+//	func end(event:Event) {
+//
+//	}
 	
 	// public API for game-state
 	
 	func update(game:Game) {
+		let (favTeamKey, underTeamKey) = initTeams_GetKeysFor(game: game)
 		
+		self.teamHistMap[favTeamKey]?.refresh(games: [game])
+		self.teamHistMap[underTeamKey]?.refresh(games: [game])
 	}
 	
 	func start(game:Game) {
@@ -67,11 +81,24 @@ extension TeamStateMgr2 {
 		
 	}
 	
-	// public API for team-score
-	func update(teamID:String, scoreDelta:Int, newScore:Int?) {
+
+	
+	private func initTeams_GetKeysFor(game:Game) -> (String, String) {
+		let favTeamKey = TeamStateMgr2.makeHistoryKeyFrom(eventID: game.eventId, teamID:game.favTeamId)
+		let underTeamKey = TeamStateMgr2.makeHistoryKeyFrom(eventID: game.eventId, teamID:game.underTeamId)
 		
+		initTeamIfMissing(eventID:game.eventId, teamID: game.favTeamId, key:favTeamKey)
+		initTeamIfMissing(eventID:game.eventId, teamID: game.underTeamId, key:underTeamKey)
+		
+		return (favTeamKey, underTeamKey)
 	}
 
+	private func initTeamIfMissing(eventID:String, teamID:String, key:String) {
+		if self.teamHistMap[key] != nil {
+			return
+		}
+		self.teamHistMap[key] = TeamPlayHistory(eventID: eventID, teamID: teamID)
+	}
 }
 
 enum LastPlayResult {
@@ -142,11 +169,8 @@ extension TeamPlayHistory {
 		guard playHistory.count > 0 else { return nil }
 		
 		let firstGame = playHistory[0]
-		if false {	// firstGame.gameState.isEnded {
-			return 0
-		} else {
-			return nil
-		}
+		// return firstGame.gameState.isEnded
+		return nil
 	}
 	
 	private var lastCompletedGameIdx:Int? {
@@ -156,6 +180,11 @@ extension TeamPlayHistory {
 			}
 		}
 		return nil
+	}
+	
+	private func processStateChange(_ oldGame:Game, _ g:Game) {
+		// what needs to happen when game rec has changed?
+		
 	}
 	
 //	var nextUnfinishedGameProgress:GameProgress? {
@@ -216,7 +245,7 @@ extension TeamPlayHistory {
 extension TeamPlayHistory {
 	// public API (plus init & refresh above)
 	
-	var key:String {
+	var eventKey:String {
 		return TeamStateMgr2.makeHistoryKeyFrom(eventID: eventID, teamID: teamID)
 	}
 	
@@ -252,12 +281,23 @@ extension TeamPlayHistory {
 		return true	// lcg.wasEliminated
 	}
 	
-	// init & refresh are used by TeamStateMgr
-	func refresh(games: [Game]) {
+	// init & refresh are used by TeamStateMgr2
+	mutating func refresh(games: [Game]) {
 		/*  how do I know when to look at next game vs prior game to detect state
 			transitions
 		*/
-		
+		for g in games {
+			var oldGame:Game?
+			if let existIdx = self.playHistory.index(of: g) {
+				oldGame = self.playHistory[existIdx]
+				self.playHistory[existIdx] = g
+				self.processStateChange(oldGame!, g)
+				oldGame = nil
+			} else {
+				// new game; not previously seen
+				self.playHistory.append(g)
+			}
+		}
 	}
 	
 	

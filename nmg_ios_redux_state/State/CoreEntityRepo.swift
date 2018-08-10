@@ -67,7 +67,7 @@ private enum ModelType {
 }
 
 
-struct CoreEntityRepo: Equatable {
+class CoreEntityRepo: Equatable {
 	/*  abstract store for model records of many types
 		ReSwift store is MUCH more efficient with equatable structs
 		at some point after reducers run, store will check which parts of state
@@ -80,14 +80,14 @@ struct CoreEntityRepo: Equatable {
 	private var objMap = [String:ModelType]()
 	private var stateHaschanged:Bool = true
 	
-	mutating func updateObj(rec:StateObj) {
+	func updateObj(rec:StateObj) {
 		let box = ModelType.box(rec: rec)
 		let key = box.fullKey(recID:rec.id)
 		objMap[key] = box
 		self.stateHaschanged = false
 	}
 	
-	mutating func markAs(stable unchanged:Bool = true) {
+	func markAs(stable unchanged:Bool = true) {
 		self.stateHaschanged = !unchanged
 	}
 	
