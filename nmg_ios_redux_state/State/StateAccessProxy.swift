@@ -12,8 +12,8 @@ protocol StateAccessProxyProtocol {
 	/*  any obj that knows how to lookup records by key
 		as a convenience to other areas of the state system
 	*/
-	func listByType<R:StateObj>() -> [R]
-	func getLatest<R:StateObj>(id recID:String) -> R?
+	func listByType<R:StateValueProto>() -> [R]
+	func getLatest<R:StateValueProto>(id recID:String) -> R?
 }
 
 class StateAccessProxy {
@@ -26,10 +26,10 @@ class StateAccessProxy {
 
 extension StateAccessProxy: StateAccessProxyProtocol {
 	
-	func listByType<R:StateObj>() -> [R] {
+	func listByType<R:StateValueProto>() -> [R] {
 		return []
 	}
-	func getLatest<R:StateObj>(id recID:String) -> R? {
+	func getLatest<R:StateValueProto>(id recID:String) -> R? {
 		return nil
 	}
 }

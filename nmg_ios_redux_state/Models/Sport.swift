@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class Sport: CustomStringConvertible, StateObj {
+class Sport: CustomStringConvertible, StateValueProto {
 	
 	var id:String 		// lets use name literal for this table as GAE-dataStore key
 	var name:String = ""	// Soccer, Basketball, etc

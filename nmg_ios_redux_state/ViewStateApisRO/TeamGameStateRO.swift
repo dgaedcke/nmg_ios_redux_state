@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ReSwift
 
 /*  Teams can be real teams, or Fantasy players
 	this object tracks things like:
@@ -24,7 +25,21 @@ class TeamStateMgr2 {	// : Equatable
 	var teamHistMap = [String:TeamPlayHistory]()
 	
 	private init() {
-		// only one instance
+		// one instance
+		
+		store.subscribe(self) { (subscription) in
+			subscription.select { (state) in
+				state.entityRecs
+			}
+		}
+		
+//		if let store:Store<AppState> = (UIApplication.shared.delegate as? AppDelegate)?.store {
+//			store.subscribe(self) { (subscription) in
+//				subscription.select { (state) in
+//					state.userAndSettingsState
+//				}
+//			}
+//		}
 	}
 	
 	static func makeHistoryKeyFrom(eventID:String, teamID:String) -> String {
@@ -34,6 +49,17 @@ class TeamStateMgr2 {	// : Equatable
 	static func makeHistoryKeyFrom(game:Game, favTeam:Bool = true) -> String {
 		let teamID = favTeam ? game.favTeamId : game.underTeamId
 		return makeHistoryKeyFrom(eventID:game.eventId, teamID:teamID)
+	}
+}
+
+
+extension TeamStateMgr2: StoreSubscriber {
+	
+	func newState(state: CoreEntityRepo) {
+		/*
+
+		*/
+		
 	}
 }
 
@@ -100,6 +126,7 @@ extension TeamStateMgr2 {
 		self.teamHistMap[key] = TeamPlayHistory(eventID: eventID, teamID: teamID)
 	}
 }
+
 
 enum LastPlayResult {
 	case prePlay

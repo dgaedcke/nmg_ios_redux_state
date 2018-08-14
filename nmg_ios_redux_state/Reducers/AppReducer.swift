@@ -6,8 +6,6 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 	return AppState(
 		// coreEntityReducer just tracks latest state of records
 		entityRecs: coreEntityReducer(action: action, state: state?.entityRecs),
-		// eventsState tracks games & teams & tradability
-		eventsState: eventReducer(action: action, state: state?.eventsState),
 		// keeps current team prices
 		pricesState: priceReducer(action: action, state: state?.pricesState),
 		// tracks user settings
@@ -31,3 +29,7 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 //	}
 //	
 //}
+
+
+// eventsState tracks games & teams & tradability
+//eventsState: eventReducer(action: action, state: state?.eventsState),

@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 
-struct Game: Equatable, StateObj {
+struct Game: Equatable, StateValueProto {
 	
 	var id:String = ""		// composed like:  eventId_favTeamId_underTeamId
 	var favTeamId:String = ""		// expected to win

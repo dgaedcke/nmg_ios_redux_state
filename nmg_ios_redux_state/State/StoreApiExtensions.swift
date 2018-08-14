@@ -15,11 +15,11 @@ extension Store {
 		rather than iterating through list of all games
 	*/
 	
-	func getLatest<R:StateObj>(id recID:String) -> R? {
+	func getLatest<R:StateValueProto>(id recID:String) -> R? {
 		return (self.state as? AppState)?.entityRecs.getLatest(id:recID)
 	}
 	
-	func listByType<R:StateObj>() -> [R] {
+	func listByType<R:StateValueProto>() -> [R] {
 		return (self.state as? AppState)?.entityRecs.listByType() ?? []
 	}
 }

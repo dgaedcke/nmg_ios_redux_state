@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 
-class Team: Codable, StateObj {
+class Team: Codable, StateValueProto {
 	//
 	// stored fields
 	var id: String = ""		// always uppercased

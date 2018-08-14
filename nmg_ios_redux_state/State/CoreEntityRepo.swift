@@ -10,9 +10,7 @@ import Foundation
 
 // CoreEntityRepo below:
 
-protocol StateObj {
-	var id:String {get}
-}
+
 
 
 private enum ModelType {
@@ -24,7 +22,7 @@ private enum ModelType {
 	case unknown(Int?)
 	
 	
-	func valueFromBox<R:StateObj>() -> R? {
+	func valueFromBox<R:StateValueProto>() -> R? {
 		//		return _(let rec) = self
 		switch self {
 		case .sport(let rec):
@@ -36,7 +34,7 @@ private enum ModelType {
 		}
 	}
 	
-	static func box(rec: StateObj) -> ModelType {
+	static func box(rec: StateValueProto) -> ModelType {
 		
 		switch rec {
 		case let sp as Sport:
@@ -80,7 +78,7 @@ class CoreEntityRepo: Equatable {
 	private var objMap = [String:ModelType]()
 	private var stateHaschanged:Bool = true
 	
-	func updateObj(rec:StateObj) {
+	func updateObj(rec:StateValueProto) {
 		let box = ModelType.box(rec: rec)
 		let key = box.fullKey(recID:rec.id)
 		objMap[key] = box
@@ -91,7 +89,7 @@ class CoreEntityRepo: Equatable {
 		self.stateHaschanged = !unchanged
 	}
 	
-	func listByType<R:StateObj>() -> [R] {
+	func listByType<R:StateValueProto>() -> [R] {
 		// return list of all Games/etc
 		// FIX ME:
 		let prefix = String(describing: R.self)
@@ -99,7 +97,7 @@ class CoreEntityRepo: Equatable {
 		return []
 	}
 	
-	func getLatest<R:StateObj>(id recID:String) -> R? {
+	func getLatest<R:StateValueProto>(id recID:String) -> R? {
 		let tblIdx = String(describing: R.self)	// .hashValue
 		let key = "\(tblIdx)-" + recID
 //		print(key)
