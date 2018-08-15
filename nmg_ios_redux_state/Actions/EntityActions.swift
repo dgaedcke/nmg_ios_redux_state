@@ -9,7 +9,7 @@
 import ReSwift
 
 
-enum StEventAction: Action {
+enum StEntityAction: Action {
 	// API updates
 	case eventUpdated(Event)
 	case gameUpdated(Game)

@@ -11,11 +11,11 @@ import ReSwift
 
 func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo {
 	// 
-	var state = state ?? CoreEntityRepo.shared
+	var state = state ?? CoreEntityRepo()
 	switch action {
-	case StEventAction.gameUpdated(let updatedGame):
+	case StEntityAction.gameUpdated(let updatedGame):
 		state.updateObj(rec: updatedGame)
-	case StEventAction.eventUpdated(let event):
+	case StEntityAction.eventUpdated(let event):
 		state.updateObj(rec: event)
 		
 //	case StEventAction.teamUpdated(let team):

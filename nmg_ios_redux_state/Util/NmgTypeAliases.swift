@@ -8,7 +8,7 @@
 
 //import Foundation
 
-struct NTA {
+struct RDXTypes {
 	typealias EventID = String
 	typealias TeamID = String
 	typealias GameID = String

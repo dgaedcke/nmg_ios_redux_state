@@ -23,9 +23,9 @@ struct TeamPrice:Codable, Equatable {
 	// so the types are rigid;
 	// each leaf-node from: firebase/eventPrices/someEvent/<teamID>
 	// stored in EventPrices which is stored in TeamPricesApi.shared.prices
-	var eventId:NTA.EventID = ""
-	let teamId:NTA.TeamID		// always uppercased
-	let price:Double
+	var eventId:RDXTypes.EventID = ""
+	let teamId:RDXTypes.TeamID		// always uppercased
+	let price:Double	// NMGCurrency
 	let delta:Int
 	let asOfDtTm = Date()
 	

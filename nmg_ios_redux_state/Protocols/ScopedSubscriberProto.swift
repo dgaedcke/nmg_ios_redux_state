@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol ScopedSubscriberProto {
+protocol ScopedSubscriberProto: AnyObject {
 	// any view or VC that wants to subscribe to a limited set of record changes
 	//  when the VC subscribes (or updates subscription)
 	// it's important that he passes the Observer a list of tuples

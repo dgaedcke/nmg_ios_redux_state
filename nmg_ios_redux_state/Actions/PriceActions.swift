@@ -16,6 +16,6 @@ enum StPriceAction: Action {
 	// from reducer
 	case priceIncreased(TeamPrice)	// assetKey
 	case priceDecreased(TeamPrice) // assetKey
-	case priceToZero(NTA.TeamID)	// teamID (spans many events when team loses/eliminated)
+	case priceToZero(RDXTypes.TeamID)	// teamID (spans many events when team loses/eliminated)
 	
 }

@@ -27,7 +27,7 @@ struct AppState: StateType, Equatable {
 		and let the views subscribe to those
 	*/
 	// entityRecs keeps copies of Events, Games, Teams, WatchLists
-	var entityRecs: CoreEntityRepo = CoreEntityRepo.shared
+	var entityRecs: CoreEntityRepo
 	// pricesState keeps copies of most recent teamPrice values
 	let pricesState: PricesState
 	let userAndSettingsState: SettingsState	// includes the user

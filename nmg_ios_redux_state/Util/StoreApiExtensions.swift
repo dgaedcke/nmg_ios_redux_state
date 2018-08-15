@@ -13,6 +13,9 @@ extension Store {
 		most state/data should come via subscriptions
 		but if you just need one record, you can read it from here
 		rather than iterating through list of all games
+	
+	this is an anti-pattern;  should use another RO API for this
+	but won't no-op this until I have that other pattern established
 	*/
 	
 	func getLatest<R:StateValueProto>(id recID:String) -> R? {

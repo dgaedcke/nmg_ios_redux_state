@@ -17,16 +17,16 @@ import ReSwift
 
 */
 
-class TeamStateMgr2 {	// : Equatable
+final class TeamStateMgr2: RDXSubscribableSuper {	// : Equatable
 	// singleton to avoid replacing everything each time
 	// team can be a player in fantasy
 	static var shared = TeamStateMgr2()
 	// key is from makeHistoryKeyFrom(eventID, teamID)
 	var teamHistMap = [String:TeamPlayHistory]()
 	
-	private init() {
+	override private init() {
 		// one instance
-		
+		super.init()
 		store.subscribe(self) { (subscription) in
 			subscription.select { (state) in
 				state.entityRecs

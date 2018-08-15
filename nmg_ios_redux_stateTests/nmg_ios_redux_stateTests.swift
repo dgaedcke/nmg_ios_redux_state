@@ -43,12 +43,12 @@ class nmg_ios_redux_stateTests: XCTestCase {
 		// subscription will cause state to be sent once;  dispatch (below) will cause it to get sent again
 		store.subscribe(self) { (subscription:Subscription) in
 			subscription.select { (state:AppState) in
-				return state.eventsState
+				return state.entityRecs
 			}
 		}
 
 		let newGame = Game(id: "123", favTeamId: "favID", underTeamId: "underID", sportId: "foot-nfl", eventId: "dgEvent", actualStartDtTm: Date() )
-		let action = StEventAction.gameUpdated(newGame)
+		let action = StEntityAction.gameUpdated(newGame)
 		store.dispatch(action)
 //		print("end store.dispatch")
 		
@@ -58,13 +58,13 @@ class nmg_ios_redux_stateTests: XCTestCase {
 
 extension nmg_ios_redux_stateTests: StoreSubscriber {
 	
-	func newState(state: EventsState) {
+	func newState(state: CoreEntityRepo) {
 //		callbackCount += 1
 		print("got callback:  \(self.pendExpectation?.debugDescription ?? "oops?")")
 		switch self.pendExpectation?.debugDescription ?? "oops?" {
 		case "test_changing_game_state":
 			print("case test_changing_game_state on call \(1)")
-			if state.containsGame(id: "123") {
+			if let game:Game = state.getLatest(id: "123") {
 				self.pendExpectation?.fulfill()
 			}
 

@@ -65,7 +65,7 @@ private enum ModelType {
 }
 
 
-class CoreEntityRepo: Equatable {
+struct CoreEntityRepo: Equatable {
 	/*  abstract store for model records of many types
 		ReSwift store is MUCH more efficient with equatable structs
 		at some point after reducers run, store will check which parts of state
@@ -73,20 +73,24 @@ class CoreEntityRepo: Equatable {
 		since this is a singleton, we need to manage our own dirty state
 		via self.stateHaschanged
 	*/
-	static var shared = CoreEntityRepo()
+//	static var shared = CoreEntityRepo()
 	
 	private var objMap = [String:ModelType]()
 	private var stateHaschanged:Bool = true
 	
-	func updateObj(rec:StateValueProto) {
+	func updateObj(rec:StateValueProto) -> CoreEntityRepo {
+		var new = self
 		let box = ModelType.box(rec: rec)
 		let key = box.fullKey(recID:rec.id)
-		objMap[key] = box
-		self.stateHaschanged = false
+		new.objMap[key] = box
+		new.stateHaschanged = false
+		return new
 	}
 	
-	func markAs(stable unchanged:Bool = true) {
-		self.stateHaschanged = !unchanged
+	func markAs(stable unchanged:Bool = true) -> CoreEntityRepo {
+		var new = self
+		new.stateHaschanged = !unchanged
+		return new
 	}
 	
 	func listByType<R:StateValueProto>() -> [R] {
@@ -105,13 +109,13 @@ class CoreEntityRepo: Equatable {
 		return box.valueFromBox()
 	}
 	
-	private init() {
-		// prevent new instances
-	}
+//	private init() {
+//		// prevent new instances
+//	}
 	
 	static func == (lhs: CoreEntityRepo, rhs: CoreEntityRepo) -> Bool {
-		//
-		return CoreEntityRepo.shared.stateHaschanged
+		// FIXME
+		return lhs.stateHaschanged
 	}
 }
 

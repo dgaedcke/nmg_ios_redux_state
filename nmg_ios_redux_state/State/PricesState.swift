@@ -10,8 +10,8 @@ import ReSwift
 
 
 struct EventPrices: Equatable {
-	let eventID:NTA.EventID
-	var teamPrices:[NTA.TeamID:TeamPrice]
+	let eventID:RDXTypes.EventID
+	var teamPrices:[RDXTypes.TeamID:TeamPrice]
 	
 	mutating func updateTeam(teamPrice:TeamPrice) {
 		self.teamPrices[teamPrice.teamId] = teamPrice
@@ -24,16 +24,16 @@ struct PricesState: StateType, Equatable {
 		all GLOBAL data (same for all users)
 	*/
 	
-	private var eventPrices: [NTA.EventID:EventPrices] = [:]
+	private var eventPrices: [RDXTypes.EventID:EventPrices] = [:]
 	
-	mutating func updateTeamIn( eventID:NTA.EventID, teamPrice:TeamPrice) {
+	mutating func updateTeamIn( eventID:RDXTypes.EventID, teamPrice:TeamPrice) {
 		if self.eventPrices[eventID] == nil {
 			self.eventPrices[eventID] = EventPrices(eventID: eventID, teamPrices: [:])
 		}
 		self.eventPrices[eventID]?.updateTeam(teamPrice: teamPrice)
 	}
 	
-	func priceFor(teamID:NTA.TeamID, in eventID: NTA.EventID) -> TeamPrice {
+	func priceFor(teamID:RDXTypes.TeamID, in eventID: RDXTypes.EventID) -> TeamPrice {
 		guard let ep = self.eventPrices[eventID]
 			, let tp = ep.teamPrices[teamID]
 		else {

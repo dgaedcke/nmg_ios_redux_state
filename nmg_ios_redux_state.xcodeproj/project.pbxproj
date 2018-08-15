@@ -14,8 +14,9 @@
 		57164E552101040200F4E76F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57164E532101040200F4E76F /* LaunchScreen.storyboard */; };
 		57164E5D2101045400F4E76F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57164E5C2101045400F4E76F /* Podfile */; };
 		571B8D61210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */; };
+		571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E83BA21238412001FC991 /* SubscribableSuperclass.swift */; };
 		57326B312107B2DE00649323 /* PriceActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B302107B2DE00649323 /* PriceActions.swift */; };
-		57326B332107B3E500649323 /* EventActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EventActions.swift */; };
+		57326B332107B3E500649323 /* EntityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EntityActions.swift */; };
 		57326B352107B54500649323 /* BankingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* BankingActions.swift */; };
 		57326B372107BCEF00649323 /* BankingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B362107BCEF00649323 /* BankingState.swift */; };
 		57326B3C2107EAD900649323 /* TeamPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B392107EAD900649323 /* TeamPrices.swift */; };
@@ -107,7 +108,7 @@
 		57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBD2123660000EC2DDB /* StateValueProto.swift */; };
 		57DE1DC02123666000EC2DDB /* ScopedSubscriberProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */; };
 		57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */; };
-		57FD2ED02118BBC200B93CAC /* CoreEntityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */; };
+		57FD2ED02118BBC200B93CAC /* EntityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */; };
 		57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68E8210631FD00789F20 /* BankingReducer.swift */; };
 		57FF68EB21063D2C00789F20 /* PortfolioReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EA21063D2C00789F20 /* PortfolioReducer.swift */; };
 		57FF68F02106448D00789F20 /* TeamStateSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68EC2106448D00789F20 /* TeamStateSingleton.swift */; };
@@ -145,8 +146,9 @@
 		571B8D5E210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nmg_ios_redux_stateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nmg_ios_redux_stateTests.swift; sourceTree = "<group>"; };
 		571B8D62210FB23B00B5C4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		571E83BA21238412001FC991 /* SubscribableSuperclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableSuperclass.swift; sourceTree = "<group>"; };
 		57326B302107B2DE00649323 /* PriceActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceActions.swift; sourceTree = "<group>"; };
-		57326B322107B3E500649323 /* EventActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActions.swift; sourceTree = "<group>"; };
+		57326B322107B3E500649323 /* EntityActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityActions.swift; sourceTree = "<group>"; };
 		57326B342107B54500649323 /* BankingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingActions.swift; sourceTree = "<group>"; };
 		57326B362107BCEF00649323 /* BankingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingState.swift; sourceTree = "<group>"; };
 		57326B392107EAD900649323 /* TeamPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPrices.swift; sourceTree = "<group>"; };
@@ -239,7 +241,7 @@
 		57DE1DBD2123660000EC2DDB /* StateValueProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValueProto.swift; sourceTree = "<group>"; };
 		57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopedSubscriberProto.swift; sourceTree = "<group>"; };
 		57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreApiExtensions.swift; sourceTree = "<group>"; };
-		57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityReducer.swift; sourceTree = "<group>"; };
+		57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityReducer.swift; sourceTree = "<group>"; };
 		57FF68E8210631FD00789F20 /* BankingReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingReducer.swift; sourceTree = "<group>"; };
 		57FF68EA21063D2C00789F20 /* PortfolioReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioReducer.swift; sourceTree = "<group>"; };
 		57FF68EC2106448D00789F20 /* TeamStateSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamStateSingleton.swift; path = nmg_ios_redux_state/Models/TeamStateSingleton.swift; sourceTree = SOURCE_ROOT; };
@@ -295,20 +297,21 @@
 		57164E492101040100F4E76F /* nmg_ios_redux_state */ = {
 			isa = PBXGroup;
 			children = (
-				57DE1DBC212365E300EC2DDB /* Protocols */,
-				57474041210ADF2F00B24EAA /* NmgApi */,
+				571E83BD2123C86C001FC991 /* Util */,
+				571E83BC2123C53A001FC991 /* niu */,
 				5760DE252102AA3500F2207F /* Models (dont copy) */,
+				57DE1DBC212365E300EC2DDB /* Protocols */,
 				5731F6CA212241C100C6A592 /* ViewStateApisRO */,
 				5760DE242102AA2900F2207F /* State */,
 				5760DE232102AA2200F2207F /* Reducers */,
 				5760DE222102AA1B00F2207F /* Actions */,
 				57164E4A2101040100F4E76F /* AppDelegate.swift */,
 				57164E4C2101040100F4E76F /* ViewController.swift */,
-				57326B4B21097E0A00649323 /* NmgTypeAliases.swift */,
 				57164E4E2101040100F4E76F /* Main.storyboard */,
 				57164E512101040200F4E76F /* Assets.xcassets */,
 				57164E532101040200F4E76F /* LaunchScreen.storyboard */,
 				57164E562101040200F4E76F /* Info.plist */,
+				57474041210ADF2F00B24EAA /* NmgApi */,
 			);
 			path = nmg_ios_redux_state;
 			sourceTree = "<group>";
@@ -322,10 +325,30 @@
 			path = nmg_ios_redux_stateTests;
 			sourceTree = "<group>";
 		};
+		571E83BC2123C53A001FC991 /* niu */ = {
+			isa = PBXGroup;
+			children = (
+				574642EA210660F400FBAE49 /* EventsState.swift */,
+				5760DE362102B0E200F2207F /* EventReducer.swift */,
+			);
+			path = niu;
+			sourceTree = "<group>";
+		};
+		571E83BD2123C86C001FC991 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				57326B4B21097E0A00649323 /* NmgTypeAliases.swift */,
+				57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		5731F6CA212241C100C6A592 /* ViewStateApisRO */ = {
 			isa = PBXGroup;
 			children = (
 				57DE1DBB212359F400EC2DDB /* README.md */,
+				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
+				571E83BA21238412001FC991 /* SubscribableSuperclass.swift */,
 				57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */,
 				57326B3A2107EAD900649323 /* TeamPricesRO.swift */,
 			);
@@ -430,7 +453,7 @@
 		5760DE222102AA1B00F2207F /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				57326B322107B3E500649323 /* EventActions.swift */,
+				57326B322107B3E500649323 /* EntityActions.swift */,
 				57326B302107B2DE00649323 /* PriceActions.swift */,
 				5760DE3C2102B3FF00F2207F /* SettingsActions.swift */,
 				57326B342107B54500649323 /* BankingActions.swift */,
@@ -444,8 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				5760DE322102AE2E00F2207F /* AppReducer.swift */,
-				57FD2ECF2118BBC200B93CAC /* CoreEntityReducer.swift */,
-				5760DE362102B0E200F2207F /* EventReducer.swift */,
+				57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */,
 				5760DE382102B24800F2207F /* PriceReducer.swift */,
 				5760DE3A2102B28D00F2207F /* SettingsReducer.swift */,
 				57FF68E8210631FD00789F20 /* BankingReducer.swift */,
@@ -458,14 +480,11 @@
 		5760DE242102AA2900F2207F /* State */ = {
 			isa = PBXGroup;
 			children = (
-				57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */,
-				57326B382107EAA700649323 /* Helpers */,
 				5760DE302102AE1500F2207F /* AppState.swift */,
-				574642EA210660F400FBAE49 /* EventsState.swift */,
+				57326B382107EAA700649323 /* Helpers */,
 				57326B3F2107EB1700649323 /* PricesState.swift */,
 				57326B362107BCEF00649323 /* BankingState.swift */,
 				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
-				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -752,10 +771,10 @@
 				5747409F210ADF2F00B24EAA /* SummaryInternalErrorResponseBody.swift in Sources */,
 				57474094210ADF2F00B24EAA /* AddRequestBody.swift in Sources */,
 				57474093210ADF2F00B24EAA /* WithdrawFundsInternalErrorResponseBody.swift in Sources */,
-				57FD2ED02118BBC200B93CAC /* CoreEntityReducer.swift in Sources */,
+				57FD2ED02118BBC200B93CAC /* EntityReducer.swift in Sources */,
 				57326B312107B2DE00649323 /* PriceActions.swift in Sources */,
 				57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */,
-				57326B332107B3E500649323 /* EventActions.swift in Sources */,
+				57326B332107B3E500649323 /* EntityActions.swift in Sources */,
 				5760DE2B2102AA5700F2207F /* Game.swift in Sources */,
 				57326B442107F70300649323 /* NotificationAction.swift in Sources */,
 				574740B9210ADF2F00B24EAA /* DepositFundsRequestBody.swift in Sources */,
@@ -784,6 +803,7 @@
 				57326B4C21097E0A00649323 /* NmgTypeAliases.swift in Sources */,
 				5747408E210ADF2F00B24EAA /* APIs.swift in Sources */,
 				574740B3210ADF2F00B24EAA /* StorePushNotifyTokenInternalErrorResponseBody.swift in Sources */,
+				571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */,
 				5747409E210ADF2F00B24EAA /* RefreshResponseBody.swift in Sources */,
 				57164E4B2101040100F4E76F /* AppDelegate.swift in Sources */,
 			);
