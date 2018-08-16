@@ -8,8 +8,17 @@
 
 import ReSwift
 
-enum StNotificationAction: Action {
-	//
-	case blah
+extension STAct {
 	
+	enum Notification: Action {
+		// All changes related to external input (push-notifications, private (user) firebase observers)
+		
+		case transferCompleted(STActDebitCreditDetails)
+		case orderCompleted(STActDebitCreditDetails)
+		case refillCompleted(STActDebitCreditDetails)
+		case liquidationOccurred
+		
+		case setBalanceAlert(Int)	// set up account $$ threashold
+		case receivedBalanceAlert(Int)  // notify user when acct. balance reaches threashold
+	}
 }

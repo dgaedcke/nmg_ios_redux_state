@@ -11,7 +11,7 @@ import ReSwift
 func notificationReducer(action: Action, state: NotificationState?) -> NotificationState {
 	let state = state ?? NotificationState()
 	
-	guard let specAction = action as? StNotificationAction
+	guard let specAction = action as? STAct.Notification
 		else { return state }
 	
 	switch specAction {

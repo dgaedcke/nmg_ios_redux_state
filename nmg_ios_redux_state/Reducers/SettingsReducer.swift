@@ -11,7 +11,7 @@ import ReSwift
 func settingsReducer(action: Action, state: SettingsState?) -> SettingsState {
 	let state = state ?? SettingsState()
 	
-	guard let specAction = action as? StSettingsAction
+	guard let specAction = action as? STAct.AppMode
 	else { return state }
 	
 	switch specAction {

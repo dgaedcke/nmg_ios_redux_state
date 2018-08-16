@@ -12,12 +12,13 @@ func priceReducer(action: Action, state: PricesState?) -> PricesState {
 	
 	var state = state ?? PricesState()
 	
-	guard let specAction = action as? StPriceAction
+	guard let specAction = action as? STAct.EventEvent
 	else { return state }
 	
 	switch specAction {
-	case .priceUpdated(let tp):
-		state.updateTeamIn(eventID: "", teamPrice: tp)
+	case .priceChanged(let tp):
+//		state = state.updateTeamIn(eventID: "", teamPrice: tp)
+		break
 	case .priceDecreased(let tp):
 		break
 	default:

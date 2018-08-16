@@ -15,9 +15,8 @@
 		57164E5D2101045400F4E76F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57164E5C2101045400F4E76F /* Podfile */; };
 		571B8D61210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */; };
 		571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E83BA21238412001FC991 /* SubscribableSuperclass.swift */; };
-		57326B312107B2DE00649323 /* PriceActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B302107B2DE00649323 /* PriceActions.swift */; };
-		57326B332107B3E500649323 /* EntityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EntityActions.swift */; };
-		57326B352107B54500649323 /* BankingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* BankingActions.swift */; };
+		57326B332107B3E500649323 /* EventEventActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EventEventActions.swift */; };
+		57326B352107B54500649323 /* FinancialActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* FinancialActions.swift */; };
 		57326B372107BCEF00649323 /* BankingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B362107BCEF00649323 /* BankingState.swift */; };
 		57326B3C2107EAD900649323 /* TeamPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B392107EAD900649323 /* TeamPrices.swift */; };
 		57326B3D2107EAD900649323 /* TeamPricesRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3A2107EAD900649323 /* TeamPricesRO.swift */; };
@@ -26,7 +25,7 @@
 		57326B422107EDD800649323 /* TickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B412107EDD800649323 /* TickerSettings.swift */; };
 		57326B442107F70300649323 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B432107F70300649323 /* NotificationAction.swift */; };
 		57326B4C21097E0A00649323 /* NmgTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B4B21097E0A00649323 /* NmgTypeAliases.swift */; };
-		574642EB210660F400FBAE49 /* EventsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* EventsState.swift */; };
+		574642EB210660F400FBAE49 /* CurrentEventState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* CurrentEventState.swift */; };
 		57474083210ADF2F00B24EAA /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474042210ADF2F00B24EAA /* APIHelper.swift */; };
 		57474084210ADF2F00B24EAA /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */; };
 		57474085210ADF2F00B24EAA /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474045210ADF2F00B24EAA /* UserAPI.swift */; };
@@ -90,6 +89,9 @@
 		574740BF210ADF2F00B24EAA /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474080210ADF2F00B24EAA /* JSONEncodingHelper.swift */; };
 		574740C0210ADF2F00B24EAA /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474081210ADF2F00B24EAA /* Models.swift */; };
 		574740C1210ADF2F00B24EAA /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474082210ADF2F00B24EAA /* Configuration.swift */; };
+		574F25EC2125D8BE004BBAF3 /* EventStateReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574F25EB2125D8BE004BBAF3 /* EventStateReducer.swift */; };
+		574F25EE2125E843004BBAF3 /* ActionHierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574F25ED2125E843004BBAF3 /* ActionHierarchy.swift */; };
+		574F25F02125F8B9004BBAF3 /* SharedActionPayloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574F25EF2125F8B9004BBAF3 /* SharedActionPayloads.swift */; };
 		5760DE2B2102AA5700F2207F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE262102AA5700F2207F /* Game.swift */; };
 		5760DE2C2102AA5700F2207F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE272102AA5700F2207F /* Event.swift */; };
 		5760DE2D2102AA5700F2207F /* Holding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE282102AA5700F2207F /* Holding.swift */; };
@@ -97,11 +99,10 @@
 		5760DE2F2102AA5700F2207F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE2A2102AA5700F2207F /* Team.swift */; };
 		5760DE312102AE1500F2207F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE302102AE1500F2207F /* AppState.swift */; };
 		5760DE332102AE2F00F2207F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE322102AE2E00F2207F /* AppReducer.swift */; };
-		5760DE352102AE6100F2207F /* PortfolioActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE342102AE6100F2207F /* PortfolioActions.swift */; };
 		5760DE372102B0E200F2207F /* EventReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE362102B0E200F2207F /* EventReducer.swift */; };
 		5760DE392102B24800F2207F /* PriceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE382102B24800F2207F /* PriceReducer.swift */; };
 		5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3A2102B28D00F2207F /* SettingsReducer.swift */; };
-		5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* SettingsActions.swift */; };
+		5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* AppModeActions.swift */; };
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
 		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
 		57BB90DB211900C500DA2B00 /* TeamGameStateRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */; };
@@ -148,9 +149,8 @@
 		571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nmg_ios_redux_stateTests.swift; sourceTree = "<group>"; };
 		571B8D62210FB23B00B5C4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		571E83BA21238412001FC991 /* SubscribableSuperclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableSuperclass.swift; sourceTree = "<group>"; };
-		57326B302107B2DE00649323 /* PriceActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceActions.swift; sourceTree = "<group>"; };
-		57326B322107B3E500649323 /* EntityActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityActions.swift; sourceTree = "<group>"; };
-		57326B342107B54500649323 /* BankingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingActions.swift; sourceTree = "<group>"; };
+		57326B322107B3E500649323 /* EventEventActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEventActions.swift; sourceTree = "<group>"; };
+		57326B342107B54500649323 /* FinancialActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialActions.swift; sourceTree = "<group>"; };
 		57326B362107BCEF00649323 /* BankingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingState.swift; sourceTree = "<group>"; };
 		57326B392107EAD900649323 /* TeamPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPrices.swift; sourceTree = "<group>"; };
 		57326B3A2107EAD900649323 /* TeamPricesRO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPricesRO.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		57326B412107EDD800649323 /* TickerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSettings.swift; sourceTree = "<group>"; };
 		57326B432107F70300649323 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAction.swift; sourceTree = "<group>"; };
 		57326B4B21097E0A00649323 /* NmgTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmgTypeAliases.swift; sourceTree = "<group>"; };
-		574642EA210660F400FBAE49 /* EventsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsState.swift; sourceTree = "<group>"; };
+		574642EA210660F400FBAE49 /* CurrentEventState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventState.swift; sourceTree = "<group>"; };
 		57474042210ADF2F00B24EAA /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
 		57474045210ADF2F00B24EAA /* UserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
@@ -223,6 +223,9 @@
 		57474080210ADF2F00B24EAA /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
 		57474081210ADF2F00B24EAA /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		57474082210ADF2F00B24EAA /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		574F25EB2125D8BE004BBAF3 /* EventStateReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStateReducer.swift; sourceTree = "<group>"; };
+		574F25ED2125E843004BBAF3 /* ActionHierarchy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionHierarchy.swift; sourceTree = "<group>"; };
+		574F25EF2125F8B9004BBAF3 /* SharedActionPayloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedActionPayloads.swift; sourceTree = "<group>"; };
 		5760DE262102AA5700F2207F /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = nmg_ios_redux_state/Models/Game.swift; sourceTree = SOURCE_ROOT; };
 		5760DE272102AA5700F2207F /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = nmg_ios_redux_state/Models/Event.swift; sourceTree = SOURCE_ROOT; };
 		5760DE282102AA5700F2207F /* Holding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Holding.swift; path = nmg_ios_redux_state/Models/Holding.swift; sourceTree = SOURCE_ROOT; };
@@ -230,11 +233,10 @@
 		5760DE2A2102AA5700F2207F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = nmg_ios_redux_state/Models/Team.swift; sourceTree = SOURCE_ROOT; };
 		5760DE302102AE1500F2207F /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5760DE322102AE2E00F2207F /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		5760DE342102AE6100F2207F /* PortfolioActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioActions.swift; sourceTree = "<group>"; };
 		5760DE362102B0E200F2207F /* EventReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventReducer.swift; sourceTree = "<group>"; };
 		5760DE382102B24800F2207F /* PriceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceReducer.swift; sourceTree = "<group>"; };
 		5760DE3A2102B28D00F2207F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
-		5760DE3C2102B3FF00F2207F /* SettingsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActions.swift; sourceTree = "<group>"; };
+		5760DE3C2102B3FF00F2207F /* AppModeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeActions.swift; sourceTree = "<group>"; };
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
 		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
 		57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameStateRO.swift; sourceTree = "<group>"; };
@@ -331,7 +333,6 @@
 		571E83BC2123C53A001FC991 /* niu */ = {
 			isa = PBXGroup;
 			children = (
-				574642EA210660F400FBAE49 /* EventsState.swift */,
 				5760DE362102B0E200F2207F /* EventReducer.swift */,
 			);
 			path = niu;
@@ -456,11 +457,11 @@
 		5760DE222102AA1B00F2207F /* Actions */ = {
 			isa = PBXGroup;
 			children = (
-				57326B322107B3E500649323 /* EntityActions.swift */,
-				57326B302107B2DE00649323 /* PriceActions.swift */,
-				5760DE3C2102B3FF00F2207F /* SettingsActions.swift */,
-				57326B342107B54500649323 /* BankingActions.swift */,
-				5760DE342102AE6100F2207F /* PortfolioActions.swift */,
+				574F25ED2125E843004BBAF3 /* ActionHierarchy.swift */,
+				574F25EF2125F8B9004BBAF3 /* SharedActionPayloads.swift */,
+				57326B322107B3E500649323 /* EventEventActions.swift */,
+				5760DE3C2102B3FF00F2207F /* AppModeActions.swift */,
+				57326B342107B54500649323 /* FinancialActions.swift */,
 				57326B432107F70300649323 /* NotificationAction.swift */,
 			);
 			path = Actions;
@@ -471,6 +472,7 @@
 			children = (
 				5760DE322102AE2E00F2207F /* AppReducer.swift */,
 				57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */,
+				574F25EB2125D8BE004BBAF3 /* EventStateReducer.swift */,
 				5760DE382102B24800F2207F /* PriceReducer.swift */,
 				5760DE3A2102B28D00F2207F /* SettingsReducer.swift */,
 				57FF68E8210631FD00789F20 /* BankingReducer.swift */,
@@ -485,9 +487,10 @@
 			children = (
 				5760DE302102AE1500F2207F /* AppState.swift */,
 				57326B382107EAA700649323 /* Helpers */,
+				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
+				574642EA210660F400FBAE49 /* CurrentEventState.swift */,
 				57326B3F2107EB1700649323 /* PricesState.swift */,
 				57326B362107BCEF00649323 /* BankingState.swift */,
-				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				57474092210ADF2F00B24EAA /* ListRequestBody.swift in Sources */,
 				5760DE2C2102AA5700F2207F /* Event.swift in Sources */,
 				574740BD210ADF2F00B24EAA /* NewsResultsResponseBody.swift in Sources */,
+				574F25EE2125E843004BBAF3 /* ActionHierarchy.swift in Sources */,
 				574740AC210ADF2F00B24EAA /* PortfolioHoldingResultMsgResponseBody.swift in Sources */,
 				574740C1210ADF2F00B24EAA /* Configuration.swift in Sources */,
 				5760DE2D2102AA5700F2207F /* Holding.swift in Sources */,
@@ -731,6 +735,7 @@
 				574740BC210ADF2F00B24EAA /* CancelInternalErrorResponseBody.swift in Sources */,
 				574740B5210ADF2F00B24EAA /* RedeemSharesRequestBody.swift in Sources */,
 				57474086210ADF2F00B24EAA /* AuthAPI.swift in Sources */,
+				574F25F02125F8B9004BBAF3 /* SharedActionPayloads.swift in Sources */,
 				574740BB210ADF2F00B24EAA /* DepositFundsInternalErrorResponseBody.swift in Sources */,
 				57474089210ADF2F00B24EAA /* NewsAPI.swift in Sources */,
 				57FF68F5210653D700789F20 /* NotificationReducer.swift in Sources */,
@@ -755,16 +760,16 @@
 				57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */,
 				574740A6210ADF2F00B24EAA /* BasicInternalErrorResponseBody.swift in Sources */,
 				57326B402107EB1700649323 /* PricesState.swift in Sources */,
-				5760DE3D2102B3FF00F2207F /* SettingsActions.swift in Sources */,
+				5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */,
 				57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */,
 				574740B0210ADF2F00B24EAA /* PositionsInternalErrorResponseBody.swift in Sources */,
 				57474097210ADF2F00B24EAA /* SummaryRequestBody.swift in Sources */,
 				5747408F210ADF2F00B24EAA /* SummarymsgResponseBody.swift in Sources */,
 				574740A1210ADF2F00B24EAA /* HistoryRequestBody.swift in Sources */,
 				574740A3210ADF2F00B24EAA /* ListInternalErrorResponseBody.swift in Sources */,
-				57326B352107B54500649323 /* BankingActions.swift in Sources */,
+				57326B352107B54500649323 /* FinancialActions.swift in Sources */,
 				57474085210ADF2F00B24EAA /* UserAPI.swift in Sources */,
-				574642EB210660F400FBAE49 /* EventsState.swift in Sources */,
+				574642EB210660F400FBAE49 /* CurrentEventState.swift in Sources */,
 				57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */,
 				5747408C210ADF2F00B24EAA /* CodableHelper.swift in Sources */,
 				57326B422107EDD800649323 /* TickerSettings.swift in Sources */,
@@ -784,10 +789,10 @@
 				57474094210ADF2F00B24EAA /* AddRequestBody.swift in Sources */,
 				57474093210ADF2F00B24EAA /* WithdrawFundsInternalErrorResponseBody.swift in Sources */,
 				57FD2ED02118BBC200B93CAC /* EntityReducer.swift in Sources */,
-				57326B312107B2DE00649323 /* PriceActions.swift in Sources */,
 				57FF68E9210631FD00789F20 /* BankingReducer.swift in Sources */,
-				57326B332107B3E500649323 /* EntityActions.swift in Sources */,
+				57326B332107B3E500649323 /* EventEventActions.swift in Sources */,
 				5760DE2B2102AA5700F2207F /* Game.swift in Sources */,
+				574F25EC2125D8BE004BBAF3 /* EventStateReducer.swift in Sources */,
 				57326B442107F70300649323 /* NotificationAction.swift in Sources */,
 				574740B9210ADF2F00B24EAA /* DepositFundsRequestBody.swift in Sources */,
 				574740A9210ADF2F00B24EAA /* UpdateInternalErrorResponseBody.swift in Sources */,
@@ -802,7 +807,6 @@
 				576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */,
 				574740AA210ADF2F00B24EAA /* CancelRequestBody.swift in Sources */,
 				574740AF210ADF2F00B24EAA /* SubmitRequestBody.swift in Sources */,
-				5760DE352102AE6100F2207F /* PortfolioActions.swift in Sources */,
 				5760DE2E2102AA5700F2207F /* Sport.swift in Sources */,
 				57474084210ADF2F00B24EAA /* AlamofireImplementations.swift in Sources */,
 				5747409C210ADF2F00B24EAA /* UpdateRequestBody.swift in Sources */,

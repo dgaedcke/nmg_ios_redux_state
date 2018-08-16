@@ -13,13 +13,13 @@ func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo
 	// 
 	var state = state ?? CoreEntityRepo()
 	switch action {
-	case StEntityAction.gameUpdated(let updatedGame):
+	case STAct.EventEvent.gameUpdated(let updatedGame):
 		state = state.updateObj(rec: updatedGame)
 	
-	case StEntityAction.eventUpdated(let event):
+	case STAct.EventEvent.eventUpdated(let event):
 		state = state.updateObj(rec: event)
 		
-	case StEntityAction.teamUpdated(let team):
+	case STAct.EventEvent.teamUpdated(let team):
 		state = state.updateObj(rec: team)
 		
 	default:

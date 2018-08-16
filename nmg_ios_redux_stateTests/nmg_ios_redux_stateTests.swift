@@ -48,7 +48,7 @@ class nmg_ios_redux_stateTests: XCTestCase {
 		}
 
 		let newGame = Game(id: "123", favTeamId: "favID", underTeamId: "underID", sportId: "foot-nfl", eventId: "dgEvent", actualStartDtTm: Date() )
-		let action = StEntityAction.gameUpdated(newGame)
+		let action = STAct.EventEvent.gameUpdated(newGame)
 		store.dispatch(action)
 //		print("end store.dispatch")
 		

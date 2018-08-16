@@ -11,7 +11,7 @@ import ReSwift
 
 struct EventPrices: Equatable {
 	let eventID:RDXTypes.EventID
-	var teamPrices:[RDXTypes.TeamID:TeamPrice]
+	var teamPrices:[RDXTypes.TeamID: TeamPrice] = [:]
 	
 	mutating func updateTeam(teamPrice:TeamPrice) {
 		self.teamPrices[teamPrice.teamId] = teamPrice
