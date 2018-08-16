@@ -8,34 +8,36 @@
 
 import ReSwift
 
-
-
+//
 //struct EventsState: StateType, Equatable {
 //	/*  which events are open/available
 //	current games in play
 //	play status for a given game
 //	all GLOBAL data (same for all users)
 //	*/
-//	var eventMap:[String:Event] = [:]
-//	// class singleton
-//	var teamStateMgr = TeamStateMgr.shared	// replace with TeamStateMgr2 when ready
+//	var eventMap:[RDXTypes.EventID:TeamStateMgr2] = [:]
+//
 //	
-//	private var dirtyFlag:Int = 0
-//	
-//	mutating func updateEvent(event:Event) {
-//		// facade over teamStateMgr
-//		markDirty()
-//		eventMap[event.id] = event
+//	func updateEvent(event:Event) -> EventsState {
+//		if eventMap[event.id] != nil {
+//			return self
+//		}
+//		var new = self
+//		new.eventMap[event.id] = TeamStateMgr2()
+//		return new
 //	}
 //	
-//	mutating func updateTeamState(teams:[Team], games:[Game]) {
+//	func updateTeam(teamID:String, scoreDelta:Int, newScore:Int?) -> EventsState {
+//		
+//	}
+//	
+//	func updateTeamState(teams:[Team], games:[Game]) {
 //		// facade over teamStateMgr
 //		markDirty()
 //		teamStateMgr.updateState(teams: teams, games: games)
 //	}
 //	
-//	mutating func updateGameState(games:[Game]) {
-//		markDirty()
+//	func updateGame(games:[Game]) {
 //		teamStateMgr.updateGameState(games: games)
 //	}
 //	

@@ -105,6 +105,7 @@
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
 		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
 		57BB90DB211900C500DA2B00 /* TeamGameStateRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */; };
+		57CCE213212528D100BDBF56 /* AssetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCE212212528D100BDBF56 /* AssetKey.swift */; };
 		57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBD2123660000EC2DDB /* StateValueProto.swift */; };
 		57DE1DC02123666000EC2DDB /* ScopedSubscriberProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */; };
 		57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */; };
@@ -237,6 +238,7 @@
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
 		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
 		57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameStateRO.swift; sourceTree = "<group>"; };
+		57CCE212212528D100BDBF56 /* AssetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetKey.swift; sourceTree = "<group>"; };
 		57DE1DBB212359F400EC2DDB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		57DE1DBD2123660000EC2DDB /* StateValueProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValueProto.swift; sourceTree = "<group>"; };
 		57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopedSubscriberProto.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 			children = (
 				571E83BD2123C86C001FC991 /* Util */,
 				571E83BC2123C53A001FC991 /* niu */,
+				57CCE211212528BB00BDBF56 /* Models (keep) */,
 				5760DE252102AA3500F2207F /* Models (dont copy) */,
 				57DE1DBC212365E300EC2DDB /* Protocols */,
 				5731F6CA212241C100C6A592 /* ViewStateApisRO */,
@@ -505,6 +508,14 @@
 			);
 			name = "Models (dont copy)";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		57CCE211212528BB00BDBF56 /* Models (keep) */ = {
+			isa = PBXGroup;
+			children = (
+				57CCE212212528D100BDBF56 /* AssetKey.swift */,
+			);
+			path = "Models (keep)";
 			sourceTree = "<group>";
 		};
 		57DE1DBC212365E300EC2DDB /* Protocols */ = {
@@ -762,6 +773,7 @@
 				57474090210ADF2F00B24EAA /* DeleteInternalErrorResponseBody.swift in Sources */,
 				5747409A210ADF2F00B24EAA /* SubmitInternalErrorResponseBody.swift in Sources */,
 				574740BA210ADF2F00B24EAA /* JWTInternalErrorResponseBody.swift in Sources */,
+				57CCE213212528D100BDBF56 /* AssetKey.swift in Sources */,
 				57474096210ADF2F00B24EAA /* PortfolioHoldingResultMsgResponseBodyCollection.swift in Sources */,
 				574740B4210ADF2F00B24EAA /* AddInternalErrorResponseBody.swift in Sources */,
 				574740A5210ADF2F00B24EAA /* NewsResultsResponseBodyCollection.swift in Sources */,

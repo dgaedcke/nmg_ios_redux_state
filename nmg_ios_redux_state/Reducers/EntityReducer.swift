@@ -19,7 +19,7 @@ func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo
 	case StEntityAction.eventUpdated(let event):
 		state = state.updateObj(rec: event)
 		
-	case StEventAction.teamUpdated(let team):
+	case StEntityAction.teamUpdated(let team):
 		state = state.updateObj(rec: team)
 		
 	default:

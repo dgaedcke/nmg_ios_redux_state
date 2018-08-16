@@ -9,6 +9,7 @@
 import Foundation
 import ReSwift
 
+
 /*  Teams can be real teams, or Fantasy players
 	this object tracks things like:
 	events in which they are registered
@@ -17,114 +18,51 @@ import ReSwift
 
 */
 
-final class TeamStateMgr2: RDXSubscribableSuper {	// : Equatable
-	// singleton to avoid replacing everything each time
+struct TeamStateMgr2: StateType, Equatable {
+	// dict of assetKey -> TeamPlayHistory
 	// team can be a player in fantasy
-	static var shared = TeamStateMgr2()
-	// key is from makeHistoryKeyFrom(eventID, teamID)
-	var teamHistMap = [String:TeamPlayHistory]()
-	
-	override private init() {
-		// one instance
-		super.init()
-		store.subscribe(self) { (subscription) in
-			subscription.select { (state) in
-				state.entityRecs
-			}
-		}
-		
-//		if let store:Store<AppState> = (UIApplication.shared.delegate as? AppDelegate)?.store {
-//			store.subscribe(self) { (subscription) in
-//				subscription.select { (state) in
-//					state.userAndSettingsState
-//				}
-//			}
-//		}
-	}
-	
-	static func makeHistoryKeyFrom(eventID:String, teamID:String) -> String {
-		return "\(teamID)-\(eventID)"
-	}
-	
-	static func makeHistoryKeyFrom(game:Game, favTeam:Bool = true) -> String {
-		let teamID = favTeam ? game.favTeamId : game.underTeamId
-		return makeHistoryKeyFrom(eventID:game.eventId, teamID:teamID)
-	}
+
+	var teamHistMap = [AssetKey:TeamPlayHistory]()
 }
 
-
-extension TeamStateMgr2: StoreSubscriber {
-	
-	func newState(state: CoreEntityRepo) {
-		/*
-
-		*/
-		
-	}
-}
 
 
 extension TeamStateMgr2 {
 	
 	// public API for team details & team-score
-	func update(team:Team) {
-		
+	func update(assetKey:AssetKey, scoreDelta:Int, newScore:Int?) -> TeamStateMgr2 {
+		// update (or create) team play hist
+		let tph = self.teamHistMap[assetKey] ?? TeamPlayHistory(assetKey: assetKey)
+		var new = self
+		new.teamHistMap[assetKey] = tph.update(scoreDelta:scoreDelta, newScore:newScore)
+		return new
 	}
-	
-	func update(teamID:String, scoreDelta:Int, newScore:Int?) {
-		
-	}
-	
-	
-	// public API for event-state
-	
-//	func update(event:Event) {
-//
-//	}
-//
-//	func start(event:Event) {
-//
-//	}
-//
-//	func end(event:Event) {
-//
-//	}
 	
 	// public API for game-state
-	
-	func update(game:Game) {
-		let (favTeamKey, underTeamKey) = initTeams_GetKeysFor(game: game)
+	func update(game:Game) -> TeamStateMgr2 {
+		// FIXME:  make sure game carries both scores or add 2 args
 		
-		self.teamHistMap[favTeamKey]?.refresh(games: [game])
-		self.teamHistMap[underTeamKey]?.refresh(games: [game])
+		let (favTeamKey, underTeamKey) = AssetKey.makeFrom(game: game)
+		
+		var new = self.update(assetKey: favTeamKey, scoreDelta: 0, newScore: 0)	// "game.favScore"
+		new = new.update(assetKey: underTeamKey, scoreDelta: 0, newScore: 0)	// "game.underScore"
+		return new
 	}
 	
-	func start(game:Game) {
-		
-	}
-	
-	func end(game:Game) {
-		
-	}
-	
-
-	
-	private func initTeams_GetKeysFor(game:Game) -> (String, String) {
-		let favTeamKey = TeamStateMgr2.makeHistoryKeyFrom(eventID: game.eventId, teamID:game.favTeamId)
-		let underTeamKey = TeamStateMgr2.makeHistoryKeyFrom(eventID: game.eventId, teamID:game.underTeamId)
-		
-		initTeamIfMissing(eventID:game.eventId, teamID: game.favTeamId, key:favTeamKey)
-		initTeamIfMissing(eventID:game.eventId, teamID: game.underTeamId, key:underTeamKey)
-		
-		return (favTeamKey, underTeamKey)
-	}
-
-	private func initTeamIfMissing(eventID:String, teamID:String, key:String) {
-		if self.teamHistMap[key] != nil {
-			return
-		}
-		self.teamHistMap[key] = TeamPlayHistory(eventID: eventID, teamID: teamID)
-	}
+//	private func initTeams_GetKeysFor(game:Game) -> (AssetKey, AssetKey) {
+//		let (favTeamKey, underTeamKey) = AssetKey.makeFrom(game: game)
+//		initTeamIfMissing(eventID:game.eventId, teamID: game.favTeamId, key:favTeamKey)
+//		initTeamIfMissing(eventID:game.eventId, teamID: game.underTeamId, key:underTeamKey)
+//
+//		return (favTeamKey, underTeamKey)
+//	}
+//
+//	private func initTeamIfMissing(eventID:String, teamID:String, key:AssetKey) {
+//		if self.teamHistMap[key] != nil {
+//			return
+//		}
+//		self.teamHistMap[key] = TeamPlayHistory(eventID: eventID, teamID: teamID)
+//	}
 }
 
 
@@ -145,7 +83,7 @@ enum TeamPlayState {
 	case eliminated
 }
 
-struct PerformanceEvent {
+struct PerformanceEvent: Equatable {
 	// when team/player does something good or bad
 	let code:String	// touchdown, passComplete, interception
 	let points:Int	// pos or neg
@@ -154,14 +92,13 @@ struct PerformanceEvent {
 	}
 }
 
-struct TeamPlayHistory {	// Equatable
+struct TeamPlayHistory: Equatable {	//
 	/* one rec for each team / event combo
 	keeps list of all games
 	*/
-	let eventID:TeamID	// string
-	let teamID:TeamID
+	let assetKey:AssetKey	// string
 	// shared object (singleton) that can read other parts of state from deep in the tree
-	fileprivate let storeLookup:StateAccessProxyProtocol = StateAccessProxy.shared
+//	fileprivate let storeLookup:StateAccessProxyProtocol = StateAccessProxy.shared
 	fileprivate var currentScore:Int = 0	// always includes lastGameResult.earned(points)
 	fileprivate var currentState:TeamPlayState = .waiting
 	fileprivate var lastPlayResult:LastPlayResult = .prePlay
@@ -170,11 +107,14 @@ struct TeamPlayHistory {	// Equatable
 	fileprivate var playHistory:[Game] = []
 	fileprivate var performHistory:[PerformanceEvent] = []	//
 	
-	init(eventID:TeamID, teamID:TeamID, games:[Game] = []) {
-		self.eventID = eventID
-		self.teamID = teamID
+	init(assetKey:AssetKey, games:[Game] = []) {
+		self.assetKey = assetKey
 		assert(true, "last game should start AFTER n-1 game")
 		self.playHistory = games.sorted(by: { (g1, g2) in g1.scheduledStartDtTm < g2.scheduledStartDtTm } )
+	}
+	
+	static func ==(lhs:TeamPlayHistory, rhs:TeamPlayHistory) -> Bool {
+		return lhs.assetKey == rhs.assetKey
 	}
 }
 
@@ -272,8 +212,18 @@ extension TeamPlayHistory {
 extension TeamPlayHistory {
 	// public API (plus init & refresh above)
 	
+	func update(scoreDelta:Int, newScore:Int?) -> TeamPlayHistory {
+		var new = self
+		if let newScore = newScore {
+			new.currentScore = newScore
+		} else {
+			new.currentScore += scoreDelta
+		}
+		return new
+	}
+	
 	var eventKey:String {
-		return TeamStateMgr2.makeHistoryKeyFrom(eventID: eventID, teamID: teamID)
+		return assetKey.key
 	}
 	
 	var lastCompletedGame:Game? {
@@ -366,4 +316,24 @@ extension TeamPlayHistory {
 		return self.playHistory.filter( {$0.id == id}).count > 0
 	}
 }
+
+
+
+
+// public API for event-state
+
+//	func update(event:Event) {
+//
+//	}
+//
+//	func start(event:Event) {
+//
+//	}
+//
+//	func end(event:Event) {
+//
+//	}
+
+
+
 
