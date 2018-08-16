@@ -9,7 +9,7 @@
 import ReSwift
 
 
-extension STAct {
+struct STAct {
 	// Any change in state of an event/tournament  (games, prices, points, start, end, etc)
 	
 	enum EventEvent: Action {

@@ -287,14 +287,14 @@ extension TeamGameTree {
 }
 
 
-struct TeamStateMgr: Equatable {
+struct TeamStateMgr_Old: Equatable {
 	/*  any time a team has finished their first game and IS NOT
 		currently playing, then they are tradable
 		(deferring quiet period until after March Madness)
 
 
 	*/
-	static var shared = TeamStateMgr()
+	static var shared = TeamStateMgr_Old()
 	
 	fileprivate var teamMap:[TeamID:TeamGameTree] = [:]
 	
@@ -371,7 +371,7 @@ struct TeamStateMgr: Equatable {
 //	}
 }
 
-extension TeamStateMgr {
+extension TeamStateMgr_Old {
 	// public API
 	
 	func stateLabel(teamID:String, isOwned:Bool) -> String {

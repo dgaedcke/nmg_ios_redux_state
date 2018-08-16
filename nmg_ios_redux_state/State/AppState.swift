@@ -33,7 +33,7 @@ struct AppState: StateType, Equatable {
 	// pricesState keeps copies of most recent teamPrice values
 	let pricesState: PricesState
 	let userAndSettingsState: SettingsState	// includes the user
-	let bankingState: BankingState
+	let accountState: AccountState
 	// portfolioState keeps copies of user ownership positions
 	let portfolioState: PortfolioState
 	let notificationState: NotificationState	// push msgs etc
@@ -41,29 +41,11 @@ struct AppState: StateType, Equatable {
 //	let leaderboardState: LeaderboardState
 }
 
-struct SettingsState: StateType, Equatable {
-	/*  user app settings including:
-		currency (token or coin) mode
-		ticker settings
-		security/privacy config
-		any style customization
-	*/
-}
 
-
-
-struct PortfolioState: StateType, Equatable {
-	
-}
-
-struct NotificationState: StateType, Equatable {
-	
-}
-
-struct ChatState: StateType, Equatable {
-	
-}
-
-struct LeaderboardState: StateType, Equatable {
-	
-}
+//struct ChatState: StateType, Equatable {
+//	
+//}
+//
+//struct LeaderboardState: StateType, Equatable {
+//	
+//}

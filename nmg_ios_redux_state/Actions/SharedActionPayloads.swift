@@ -22,3 +22,10 @@ struct STActPortfolioActionDetails {
 	let isBuy:Bool	// false if sell
 	let shares:Int	// coins or tokens to add/sub from user account
 }
+
+
+enum StCurrencyType {
+	// replace with NMGCurrency at merge time
+	case coin
+	case token
+}

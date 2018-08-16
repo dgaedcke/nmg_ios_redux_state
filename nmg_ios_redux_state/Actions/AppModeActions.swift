@@ -8,12 +8,6 @@
 
 import ReSwift
 
-enum StCurrencyType {
-	// replace with NMGCurrency at merge time
-	case coin
-	case token
-}
-
 
 extension STAct {
 	//  Any change user makes in configuration of the app including changes to:

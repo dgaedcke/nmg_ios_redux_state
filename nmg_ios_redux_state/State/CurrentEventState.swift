@@ -10,13 +10,16 @@ import ReSwift
 
 
 struct CurrentEventState: StateType, Equatable {
-	/*  id for current selected event
-		including teams & games & current team prices
-		simply used to filter other lists from EntityRepo
+	/*  EventID for current (user) selected event
+		plus including ID's for teams, games & current team prices
+	
+		this is "derived" state that is reset each time the user switches events
 	*/
 	var eventID:RDXTypes.EventID = ""
 	var relatedTeamIDs:[RDXTypes.TeamID] = []
 	var relatedGameIDs:[RDXTypes.GameID] = []
 	var teamPrices:[RDXTypes.TeamID:TeamPrice] = [:]
 
+	// teamStateMgr holds state for every team (not just current event)
+	var teamStateMgr:TeamStateMgr = TeamStateMgr()
 }

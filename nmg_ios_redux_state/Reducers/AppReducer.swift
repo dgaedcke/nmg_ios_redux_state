@@ -14,7 +14,7 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 		// tracks user settings
 		userAndSettingsState: settingsReducer(action:action, state: state?.userAndSettingsState),
 		// settings for moving $$ in and out of the account
-		bankingState: bankingReducer(action: action, state: state?.bankingState),
+		accountState: accountBankReducer(action: action, state: state?.accountState),
 		// user holdings
 		portfolioState: portfolioReducer(action: action, state: state?.portfolioState),
 		// push notification state

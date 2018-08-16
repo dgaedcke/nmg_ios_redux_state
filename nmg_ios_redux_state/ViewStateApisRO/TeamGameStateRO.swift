@@ -18,7 +18,7 @@ import ReSwift
 
 */
 
-struct TeamStateMgr2: StateType, Equatable {
+struct TeamStateMgr: StateType, Equatable {
 	// dict of assetKey -> TeamPlayHistory
 	// team can be a player in fantasy
 
@@ -27,10 +27,10 @@ struct TeamStateMgr2: StateType, Equatable {
 
 
 
-extension TeamStateMgr2 {
+extension TeamStateMgr {
 	
 	// public API for team details & team-score
-	func update(assetKey:AssetKey, scoreDelta:Int, newScore:Int?) -> TeamStateMgr2 {
+	func update(assetKey:AssetKey, scoreDelta:Int, newScore:Int?) -> TeamStateMgr {
 		// update (or create) team play hist
 		let tph = self.teamHistMap[assetKey] ?? TeamPlayHistory(assetKey: assetKey)
 		var new = self
@@ -39,7 +39,7 @@ extension TeamStateMgr2 {
 	}
 	
 	// public API for game-state
-	func update(game:Game) -> TeamStateMgr2 {
+	func update(game:Game) -> TeamStateMgr {
 		// FIXME:  make sure game carries both scores or add 2 args
 		
 		let (favTeamKey, underTeamKey) = AssetKey.makeFrom(game: game)

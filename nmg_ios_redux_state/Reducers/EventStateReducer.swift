@@ -13,9 +13,16 @@ import ReSwift
 func eventStateReducer(action: Action, state: CurrentEventState?, entityRecs:CoreEntityRepo?, pricesState:PricesState?) -> CurrentEventState {
 	//
 	var state = state ?? CurrentEventState()
-	// this one should ONLY run if user has changed current event
-	// if so, use new event key (+ entityRecs & pricesState) to reconstruct CurrentEventState
-	// and return it
+
+	switch action as? STAct.EventEvent {
+	case .gameUpdated(let game)?:
+		state.teamStateMgr = state.teamStateMgr.update(game: game)
+	case .priceIncreased(let newPrice)?:
+		break
+	default:
+		break
+	}
+	
 	
 	return state
 }

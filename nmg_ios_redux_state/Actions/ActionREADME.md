@@ -6,15 +6,16 @@
 //  Copyright © 2018 Dewey Gaedcke. All rights reserved.
 //
 
-import ReSwift
 
+Score Trader Actions
+		STAct is the top most struct in which all enums are defined/scoped
 
-struct STAct {
-	/*  Score Trader Actions == STAct
 		Our actions DO NOT map 1-1 to reducers or areas of state
 		because some actions affect multiple areas of the total state-tree
 
-	
+
+Types of actions are:
+
 	EventEvent:
 		Any change in state of an event/tournament  (games, prices, points, start, end, etc)
 		Comes from server (usually via Firebase listeners) related to PUBLIC/global data
@@ -32,5 +33,4 @@ struct STAct {
 	NotificationAction:
 		All changes related to external input (push-notifications, private (user) firebase observers)
 
-	*/
-}
+
