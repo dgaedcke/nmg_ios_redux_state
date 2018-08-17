@@ -15,6 +15,9 @@ func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo
 	
 	if let eventAction = action as? STAct.EventEvent {
 		switch eventAction {
+		case .initGameTeam(let games, let teams):
+			state = state.bulkInit(games: games, teams: teams)
+			
 		case .gameUpdated(let updatedGame):
 			state = state.updateObj(rec: updatedGame)
 		

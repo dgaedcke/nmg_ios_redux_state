@@ -3,15 +3,15 @@ import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
 	//
-	
-	// I need entity updated for passing to other reducers
+	// need entity bucket updated FIRST for passing to other reducers
+	// who may need latest records to calc their own state
 	let entRecs = coreEntityReducer(action: action, state: state?.entityRecs)
 	
 	return AppState(
-		// coreEntityReducer just tracks latest state of ALL (ie global) recs (model instances)
+		// entityRecs just tracks latest state of ALL (ie global) recs (model instances)
 		// Events, Games, Teams, Prices, etc
 		entityRecs: entRecs,
-		// keeps list of model-instance keys that pertain to the current selected Event
+		// curEventState keeps list of model-instance keys that pertain to the current selected Event
 		curEventState: eventStateReducer(action: action, state: state?.curEventState, entityRecs: entRecs, pricesState: state?.pricesState),
 		// keeps all team prices
 		pricesState: priceReducer(action: action, state: state?.pricesState),
@@ -25,18 +25,3 @@ func appReducer(action: Action, state: AppState?) -> AppState {
 		notificationState: notificationReducer(action: action, state: state?.notificationState)
 	)
 }
-
-// or another pattern
-
-//struct MainAppReducer: Reducer<AppState> {
-////	let apiManager = MarvelAPIManager()
-//	
-//	func handleAction(action: Action, state: AppState?) -> AppState {
-//		return appReducer(action: action, state: state)
-//	}
-//	
-//}
-
-
-// eventsState tracks games & teams & tradability
-//eventsState: eventReducer(action: action, state: state?.eventsState),

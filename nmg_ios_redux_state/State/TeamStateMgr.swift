@@ -16,6 +16,10 @@ import ReSwift
 	games in each of those events
 	score for each game (additive in Fantasy)
 
+
+	Note that TeamPlayHistory methods below are INCOMPLETE
+	because I did not copy the FULL Game class (with gameStatus Enum) into this repo
+	so many of those calculations need to be finished before this module is testable
 */
 
 struct TeamStateMgr: StateType, Equatable {
@@ -28,8 +32,8 @@ struct TeamStateMgr: StateType, Equatable {
 
 
 extension TeamStateMgr {
-	
 	// public API for team details & team-score
+	
 	func update(assetKey:AssetKey, scoreDelta:Int, newScore:Int?) -> TeamStateMgr {
 		// update (or create) team play hist
 		let tph = self.teamHistMap[assetKey] ?? TeamPlayHistory(assetKey: assetKey)
@@ -49,22 +53,20 @@ extension TeamStateMgr {
 		return new
 	}
 	
-//	private func initTeams_GetKeysFor(game:Game) -> (AssetKey, AssetKey) {
-//		let (favTeamKey, underTeamKey) = AssetKey.makeFrom(game: game)
-//		initTeamIfMissing(eventID:game.eventId, teamID: game.favTeamId, key:favTeamKey)
-//		initTeamIfMissing(eventID:game.eventId, teamID: game.underTeamId, key:underTeamKey)
-//
-//		return (favTeamKey, underTeamKey)
-//	}
-//
-//	private func initTeamIfMissing(eventID:String, teamID:String, key:AssetKey) {
-//		if self.teamHistMap[key] != nil {
-//			return
-//		}
-//		self.teamHistMap[key] = TeamPlayHistory(eventID: eventID, teamID: teamID)
-//	}
+	func bulkRefresh(games:[Game], teams:[Team]) -> TeamStateMgr {
+		// build initial from full game list
+		var tsm = self
+		for g in games {
+			// this is slow & memory wasteful; optimize later
+			// its important that games come in PLAY-ORDER
+			tsm = tsm.update(game: g)
+		}
+		return tsm
+	}
 }
 
+
+// to support TeamPlayHistory below:
 
 enum LastPlayResult {
 	case prePlay
@@ -105,16 +107,18 @@ struct TeamPlayHistory: Equatable {	//
 	// list of all games for each team
 	// sorted into startDtTm order with last (most recent) game at bottom
 	fileprivate var playHistory:[Game] = []
+	// xxx is the list of things they did to win/lose points in fantasy mode
 	fileprivate var performHistory:[PerformanceEvent] = []	//
+	fileprivate var lastUpdateDtTm = Date()
 	
 	init(assetKey:AssetKey, games:[Game] = []) {
 		self.assetKey = assetKey
-		assert(true, "last game should start AFTER n-1 game")
+		assert(true, "last game in games should start AFTER n-1 game")
 		self.playHistory = games.sorted(by: { (g1, g2) in g1.scheduledStartDtTm < g2.scheduledStartDtTm } )
 	}
 	
 	static func ==(lhs:TeamPlayHistory, rhs:TeamPlayHistory) -> Bool {
-		return lhs.assetKey == rhs.assetKey
+		return lhs.lastUpdateDtTm == rhs.lastUpdateDtTm
 	}
 }
 
@@ -136,6 +140,7 @@ extension TeamPlayHistory {
 		guard playHistory.count > 0 else { return nil }
 		
 		let firstGame = playHistory[0]
+		// FIXME once we have the full Game entity (with gameState) available (as a struct)
 		// return firstGame.gameState.isEnded
 		return nil
 	}
@@ -154,35 +159,7 @@ extension TeamPlayHistory {
 		
 	}
 	
-//	var nextUnfinishedGameProgress:GameProgress? {
-//		guard let nuf = nextUnfinishedGameProgIdx, nuf < playHistory.count else {
-//			return nil
-//		}
-//		return playHistory[nuf]
-//	}
-//
-//	fileprivate var lastGameProgress:GameProgress? {
-//		/*  rename to lastUnfinishedGameProgress and use
-//		when last gameProg == lastCompletedGameProgress
-//		it would be better (faster, cleaner, more accurate) to return nil
-//		but that needs to be tested first
-//		*/
-//		guard playHistory.count > 0 else { return nil }
-//		return playHistory[playHistory.count - 1]
-//	}
-//
-//	fileprivate var lastCompletedGameProgress:GameProgress? {
-//		// back up from end of list (most recent) until
-//		// you find an ended game;  should always be the last or 2nd to last entry
-//		for gp in self.playHistory.reversed() {
-//			if gp.isOver {
-//				return gp
-//			}
-//		}
-//		return nil
-//	}
-	
-	var _allowLiquidationSale:Bool {
+	var _allowSellingIfOwned:Bool {
 		/*  Liquidation Sale:
 		Sell orders that occur AFTER the first game
 		and BEFORE the next Game is set to tradable
@@ -297,7 +274,7 @@ extension TeamPlayHistory {
 	var allowLiquidationSale:Bool {
 		// ONLY check this method when SELLING
 		// only called right before placing the order
-		return _allowLiquidationSale
+		return _allowSellingIfOwned
 	}
 	
 	var isEliminated:Bool {

@@ -15,6 +15,7 @@ struct CurrentEventState: StateType, Equatable {
 	
 		this is "derived" state that is reset each time the user switches events
 	*/
+	// vals related to current (ie user selected) event
 	var eventID:RDXTypes.EventID = ""
 	var relatedTeamIDs:[RDXTypes.TeamID] = []
 	var relatedGameIDs:[RDXTypes.GameID] = []
@@ -22,4 +23,12 @@ struct CurrentEventState: StateType, Equatable {
 
 	// teamStateMgr holds state for every team (not just current event)
 	var teamStateMgr:TeamStateMgr = TeamStateMgr()
+	
+	func bulkUpdate(games:[Game], teams:[Team]) -> CurrentEventState {
+		// called when app inits
+		let tsm = teamStateMgr.bulkRefresh(games:games, teams:teams)
+		var new = self
+		new.teamStateMgr = tsm
+		return new
+	}
 }

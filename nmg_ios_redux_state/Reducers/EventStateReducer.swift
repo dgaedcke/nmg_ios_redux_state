@@ -16,7 +16,10 @@ func eventStateReducer(action: Action, state: CurrentEventState?, entityRecs:Cor
 
 	if let eventAction = action as? STAct.EventEvent {
 		switch eventAction {
+		case .initGameTeam(let games, let teams):
+			state = state.bulkUpdate(games:games, teams:teams)
 		case .gameUpdated(let game):
+			// current event has not changed so you only need to update team-state
 			state.teamStateMgr = state.teamStateMgr.update(game: game)
 		case .priceIncreased(let newPrice):
 			break

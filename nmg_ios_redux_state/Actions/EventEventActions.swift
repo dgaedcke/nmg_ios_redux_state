@@ -13,6 +13,9 @@ struct STAct {
 	// Any change in state of an event/tournament  (games, prices, points, start, end, etc)
 	
 	enum EventEvent: Action {
+		// app launch (init setup)
+		case initGameTeam([Game], [Team])
+		
 		// API updates
 		case eventUpdated(Event)
 		case gameUpdated(Game)

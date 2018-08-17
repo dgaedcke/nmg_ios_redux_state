@@ -25,6 +25,14 @@ struct CoreEntityRepo: Equatable {	// , Hashable
 	private var objMap = [String:ModelType]()
 	private var lastUpdatedDtTm = Date()
 	
+	func bulkInit(games:[Game], teams:[Team]) -> CoreEntityRepo {
+		// called when app first runs with all games/teams
+		var new = self
+		print("Err: FINISHME")
+		
+		return self
+	}
+	
 	func updateObj(rec:StateValueProto) -> CoreEntityRepo {
 		var new = self
 		let box = ModelType.box(rec: rec)
