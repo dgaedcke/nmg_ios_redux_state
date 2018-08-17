@@ -36,10 +36,15 @@ struct CoreEntityRepo: Equatable {	// , Hashable
 	
 	func listByType<R:StateValueProto>() -> [R] {
 		// return list of all Games/etc
-		// FIX ME:
 		let prefix = String(describing: R.self)
-//		return objMap.filter( { (k, _) in return k.hasPrefix(prefix) }).values as [R]
-		return []
+		let filteredDict = objMap.filter({ $0.key.hasPrefix(prefix) })
+		let recsAsArray = filteredDict.map { $0.value } // as? [ModelType]
+		return recsAsArray.compactMap({ $0.valueFromBox() })
+	}
+	
+	func listByTypeFiltered<R:StateValueProto>(by f: (R) -> Bool ) -> [R] {
+		let recsAsArray:[R] = listByType()
+		return recsAsArray.filter(f)
 	}
 	
 	func getLatest<R:StateValueProto>(id recID:String) -> R? {

@@ -2,13 +2,17 @@ import ReSwift
 
 
 func appReducer(action: Action, state: AppState?) -> AppState {
-	// 
+	//
+	
+	// I need entity updated for passing to other reducers
+	let entRecs = coreEntityReducer(action: action, state: state?.entityRecs)
+	
 	return AppState(
 		// coreEntityReducer just tracks latest state of ALL (ie global) recs (model instances)
 		// Events, Games, Teams, Prices, etc
-		entityRecs: coreEntityReducer(action: action, state: state?.entityRecs),
+		entityRecs: entRecs,
 		// keeps list of model-instance keys that pertain to the current selected Event
-		curEventState: eventStateReducer(action: action, state: state?.curEventState, entityRecs: state?.entityRecs, pricesState: state?.pricesState),
+		curEventState: eventStateReducer(action: action, state: state?.curEventState, entityRecs: entRecs, pricesState: state?.pricesState),
 		// keeps all team prices
 		pricesState: priceReducer(action: action, state: state?.pricesState),
 		// tracks user settings

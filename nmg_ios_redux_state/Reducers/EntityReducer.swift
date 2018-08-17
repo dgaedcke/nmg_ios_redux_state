@@ -12,19 +12,24 @@ import ReSwift
 func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo {
 	// 
 	var state = state ?? CoreEntityRepo()
-	switch action {
-	case STAct.EventEvent.gameUpdated(let updatedGame):
-		state = state.updateObj(rec: updatedGame)
 	
-	case STAct.EventEvent.eventUpdated(let event):
-		state = state.updateObj(rec: event)
+	if let eventAction = action as? STAct.EventEvent {
+		switch eventAction {
+		case .gameUpdated(let updatedGame):
+			state = state.updateObj(rec: updatedGame)
 		
-	case STAct.EventEvent.teamUpdated(let team):
-		state = state.updateObj(rec: team)
-		
-	default:
-		break
+		case .eventUpdated(let event):
+			state = state.updateObj(rec: event)
+			
+		case .teamUpdated(let team):
+			state = state.updateObj(rec: team)
+			
+		default:
+			break
+		}
 	}
+	
+	
 	
 	return state
 }

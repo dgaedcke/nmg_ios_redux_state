@@ -14,15 +14,25 @@ func eventStateReducer(action: Action, state: CurrentEventState?, entityRecs:Cor
 	//
 	var state = state ?? CurrentEventState()
 
-	switch action as? STAct.EventEvent {
-	case .gameUpdated(let game)?:
-		state.teamStateMgr = state.teamStateMgr.update(game: game)
-	case .priceIncreased(let newPrice)?:
-		break
-	default:
-		break
+	if let eventAction = action as? STAct.EventEvent {
+		switch eventAction {
+		case .gameUpdated(let game):
+			state.teamStateMgr = state.teamStateMgr.update(game: game)
+		case .priceIncreased(let newPrice):
+			break
+		default:
+			break
+		}
 	}
 	
+	if let modeAction = action as? STAct.AppMode {
+		switch modeAction {
+		case .changeCurrentEvent(let eventID):
+			state.teamStateMgr = TeamStateMgr()
+		default:
+			break
+		}
+	}
 	
 	return state
 }

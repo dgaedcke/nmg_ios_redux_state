@@ -1,11 +1,12 @@
 /*
 App state divided into the following categories:
 
-	Event  (game & team changes; global to all users)
-	Prices (team price state)
-	Settings (current app context)
-	Banking
-	Portfolio
+	entityRecs
+	curEventState  (game & team recs; global to all users)
+	pricesState (team price state)
+	userAndSettingsState (current app context)
+	accountState
+	portfolioState
 
 */
 
@@ -15,17 +16,8 @@ struct AppState: StateType, Equatable {
 	/*  fundamental (flat & non-complex) state for entire app is nested under here
 		it's important that this state remain immutable (structs)
 		and simple/easy to update by reducers
-		so I have several other singletons (see ViewStateApisRO)
-		that SUBSCRIBE to entityRecs and calc/update the more complex state
-		needed by our Views;
-		in conventional ReSwift, the views subscribe directly to the store
-		in our implementation, they subscribe to the store to get change events
-		but when they need SPECIFIC data, they request it from the above singletons
-		that won't work because subscriber-callback order is not guaranteed
-		and the view could get called BEFORE the singleton is updated
-		so we need to implement a subscriber pattern on the ViewStateApisRO
-		and let the views subscribe to those
 	*/
+	
 	// entityRecs keeps copies of Events, Games, Teams, WatchLists
 	let entityRecs: CoreEntityRepo
 	// related IDs for current event selected by the user
@@ -49,3 +41,15 @@ struct AppState: StateType, Equatable {
 //struct LeaderboardState: StateType, Equatable {
 //	
 //}
+
+
+//so I have several other singletons (see ViewStateApisRO)
+//that SUBSCRIBE to entityRecs and calc/update the more complex state
+//needed by our Views;
+//in conventional ReSwift, the views subscribe directly to the store
+//in our implementation, they subscribe to the store to get change events
+//but when they need SPECIFIC data, they request it from the above singletons
+//that won't work because subscriber-callback order is not guaranteed
+//and the view could get called BEFORE the singleton is updated
+//so we need to implement a subscriber pattern on the ViewStateApisRO
+//and let the views subscribe to those

@@ -27,7 +27,7 @@
 		57326B402107EB1700649323 /* PricesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3F2107EB1700649323 /* PricesState.swift */; };
 		57326B422107EDD800649323 /* TickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B412107EDD800649323 /* TickerSettings.swift */; };
 		57326B442107F70300649323 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B432107F70300649323 /* NotificationAction.swift */; };
-		57326B4C21097E0A00649323 /* NmgTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B4B21097E0A00649323 /* NmgTypeAliases.swift */; };
+		57326B4C21097E0A00649323 /* RDXTypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B4B21097E0A00649323 /* RDXTypeAliases.swift */; };
 		574642EB210660F400FBAE49 /* CurrentEventState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574642EA210660F400FBAE49 /* CurrentEventState.swift */; };
 		57474083210ADF2F00B24EAA /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474042210ADF2F00B24EAA /* APIHelper.swift */; };
 		57474084210ADF2F00B24EAA /* AlamofireImplementations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */; };
@@ -108,7 +108,7 @@
 		5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* AppModeActions.swift */; };
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
 		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
-		57BB90DB211900C500DA2B00 /* TeamGameStateRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */; };
+		57BB90DB211900C500DA2B00 /* TeamStateMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */; };
 		57CCE213212528D100BDBF56 /* AssetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCE212212528D100BDBF56 /* AssetKey.swift */; };
 		57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBD2123660000EC2DDB /* StateValueProto.swift */; };
 		57DE1DC02123666000EC2DDB /* ScopedSubscriberProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */; };
@@ -164,7 +164,7 @@
 		57326B3F2107EB1700649323 /* PricesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesState.swift; sourceTree = "<group>"; };
 		57326B412107EDD800649323 /* TickerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSettings.swift; sourceTree = "<group>"; };
 		57326B432107F70300649323 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAction.swift; sourceTree = "<group>"; };
-		57326B4B21097E0A00649323 /* NmgTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NmgTypeAliases.swift; sourceTree = "<group>"; };
+		57326B4B21097E0A00649323 /* RDXTypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDXTypeAliases.swift; sourceTree = "<group>"; };
 		574642EA210660F400FBAE49 /* CurrentEventState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventState.swift; sourceTree = "<group>"; };
 		57474042210ADF2F00B24EAA /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		57474043210ADF2F00B24EAA /* AlamofireImplementations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireImplementations.swift; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 		5760DE3C2102B3FF00F2207F /* AppModeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeActions.swift; sourceTree = "<group>"; };
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
 		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
-		57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGameStateRO.swift; sourceTree = "<group>"; };
+		57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStateMgr.swift; sourceTree = "<group>"; };
 		57CCE212212528D100BDBF56 /* AssetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetKey.swift; sourceTree = "<group>"; };
 		57DE1DBB212359F400EC2DDB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		57DE1DBD2123660000EC2DDB /* StateValueProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValueProto.swift; sourceTree = "<group>"; };
@@ -339,7 +339,12 @@
 		571E83BC2123C53A001FC991 /* niu */ = {
 			isa = PBXGroup;
 			children = (
+				57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */,
+				57326B3A2107EAD900649323 /* TeamPricesRO.swift */,
 				5760DE362102B0E200F2207F /* EventReducer.swift */,
+				57326B3B2107EAD900649323 /* EventPrices.swift */,
+				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
+				571E83BA21238412001FC991 /* SubscribableSuperclass.swift */,
 			);
 			path = niu;
 			sourceTree = "<group>";
@@ -347,7 +352,7 @@
 		571E83BD2123C86C001FC991 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				57326B4B21097E0A00649323 /* NmgTypeAliases.swift */,
+				57326B4B21097E0A00649323 /* RDXTypeAliases.swift */,
 				57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */,
 			);
 			path = Util;
@@ -357,21 +362,8 @@
 			isa = PBXGroup;
 			children = (
 				57DE1DBB212359F400EC2DDB /* README.md */,
-				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
-				571E83BA21238412001FC991 /* SubscribableSuperclass.swift */,
-				57BB90DA211900C500DA2B00 /* TeamGameStateRO.swift */,
-				57326B3A2107EAD900649323 /* TeamPricesRO.swift */,
 			);
 			path = ViewStateApisRO;
-			sourceTree = "<group>";
-		};
-		57326B382107EAA700649323 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				57326B3B2107EAD900649323 /* EventPrices.swift */,
-				57326B392107EAD900649323 /* TeamPrices.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		57474041210ADF2F00B24EAA /* NmgApi */ = {
@@ -492,9 +484,9 @@
 			isa = PBXGroup;
 			children = (
 				5760DE302102AE1500F2207F /* AppState.swift */,
-				57326B382107EAA700649323 /* Helpers */,
 				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
 				574642EA210660F400FBAE49 /* CurrentEventState.swift */,
+				57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */,
 				57326B3F2107EB1700649323 /* PricesState.swift */,
 				5708171B212603DA00D1E0E4 /* SettingsState.swift */,
 				57326B362107BCEF00649323 /* AccountState.swift */,
@@ -517,6 +509,7 @@
 				5760DE292102AA5700F2207F /* Sport.swift */,
 				5760DE2A2102AA5700F2207F /* Team.swift */,
 				57326B412107EDD800649323 /* TickerSettings.swift */,
+				57326B392107EAD900649323 /* TeamPrices.swift */,
 			);
 			name = "Models (dont copy)";
 			path = "New Group";
@@ -534,7 +527,6 @@
 			isa = PBXGroup;
 			children = (
 				57DE1DBD2123660000EC2DDB /* StateValueProto.swift */,
-				57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -736,7 +728,7 @@
 				5760DE2D2102AA5700F2207F /* Holding.swift in Sources */,
 				574740B8210ADF2F00B24EAA /* LoadResponseBody.swift in Sources */,
 				5760DE372102B0E200F2207F /* EventReducer.swift in Sources */,
-				57BB90DB211900C500DA2B00 /* TeamGameStateRO.swift in Sources */,
+				57BB90DB211900C500DA2B00 /* TeamStateMgr.swift in Sources */,
 				5747408A210ADF2F00B24EAA /* PortfolioAPI.swift in Sources */,
 				5760DE2F2102AA5700F2207F /* Team.swift in Sources */,
 				57474091210ADF2F00B24EAA /* AddResponseBody.swift in Sources */,
@@ -828,7 +820,7 @@
 				574740BF210ADF2F00B24EAA /* JSONEncodingHelper.swift in Sources */,
 				574740B2210ADF2F00B24EAA /* OrderResultsMsg.swift in Sources */,
 				57FF68F02106448D00789F20 /* TeamStateSingleton.swift in Sources */,
-				57326B4C21097E0A00649323 /* NmgTypeAliases.swift in Sources */,
+				57326B4C21097E0A00649323 /* RDXTypeAliases.swift in Sources */,
 				5747408E210ADF2F00B24EAA /* APIs.swift in Sources */,
 				574740B3210ADF2F00B24EAA /* StorePushNotifyTokenInternalErrorResponseBody.swift in Sources */,
 				571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */,
