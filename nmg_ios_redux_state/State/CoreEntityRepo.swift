@@ -75,18 +75,23 @@ private enum ModelType {
 	
 	case sport(Sport)
 	case event(Event)
-	//	case game(Game)
-	//	case team(Team)
+	case game(Game)
+	case team(Team)
 	//	case discriminator(Dimension)
 	case unknown(Int?)
 	
 	
 	func valueFromBox<R:StateValueProto>() -> R? {
-		//		return _(let rec) = self
+//		let r = _(let rec) = self
+//		return r
 		switch self {
 		case .sport(let rec):
 			return rec as? R
 		case .event(let rec):
+			return rec as? R
+		case .game(let rec):
+			return rec as? R
+		case .team(let rec):
 			return rec as? R
 		default:
 			return nil
@@ -100,10 +105,10 @@ private enum ModelType {
 			return .sport(sp)
 		case let sp as Event:
 			return .event(sp)
-			//		case let sp as Game:
-			//			return .game(sp)
-			//		case let sp as Team:
-		//			return .team(sp)
+		case let sp as Game:
+			return .game(sp)
+		case let sp as Team:
+		return .team(sp)
 		default:
 			return unknown(0)
 		}
@@ -116,6 +121,12 @@ private enum ModelType {
 			typeIdx = String(describing: Sport.self)
 		case .event(_):
 			typeIdx = String(describing: Event.self)
+		case .game(_):
+			typeIdx = String(describing: Game.self)
+		case .team(_):
+			typeIdx = String(describing: Team.self)
+//		case .sport(_):
+//			typeIdx = String(describing: Sport.self)
 		default:
 			break
 		}

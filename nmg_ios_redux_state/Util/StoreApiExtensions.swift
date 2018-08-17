@@ -25,4 +25,8 @@ extension Store {
 	func listByType<R:StateValueProto>() -> [R] {
 		return (self.state as? AppState)?.entityRecs.listByType() ?? []
 	}
+	
+	func listByTypeFiltered<R:StateValueProto>(by filter: (StateValueProto) -> Bool ) -> [R] {
+		return (self.state as? AppState)?.entityRecs.listByTypeFiltered(by:filter) ?? []
+	}
 }
