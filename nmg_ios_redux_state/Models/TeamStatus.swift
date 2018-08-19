@@ -15,8 +15,8 @@ enum EventAdvanceMethod:String, Codable {
 	case doubleElimination
 }
 
-
 enum TeamGameCompletionStatus:Int, Codable {
+	
 	case roster = 0
 	case scheduled
 	case playing
@@ -44,8 +44,8 @@ enum TeamGameCompletionStatus:Int, Codable {
 			return "eliminated"
 		case .wonfinal:
 			return "Won Final"
-//		default:
-//			return "FIXME"
+			//		default:
+			//			return "FIXME"
 		}
 	}
 }
@@ -61,7 +61,7 @@ enum GamePlayStatus:String, Codable {
 	case future		// a game in db that would NOT be known in real event (for testing)
 	
 	var label:String {
-        return "\(self.rawValue)"	// self.rawValue.localized()
+		return self.rawValue	// FIXME .localized()
 	}
 	
 	var isOver:Bool {
@@ -100,7 +100,7 @@ enum PortfolioAssetStatus:String, Codable {
 	case sold	// state at end of game
 	
 	var label:String {
-        return "\(self.rawValue)"	//  self.rawValue.localized()
+		return self.rawValue	// FIXME  .localized()
 	}
 	
 	var notShown:Bool {

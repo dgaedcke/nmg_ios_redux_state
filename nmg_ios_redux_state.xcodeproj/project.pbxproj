@@ -107,6 +107,8 @@
 		5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3A2102B28D00F2207F /* SettingsReducer.swift */; };
 		5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* AppModeActions.swift */; };
 		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
+		57893EF02128EB6100B5BEE4 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893EEF2128EB6100B5BEE4 /* GameViewModel.swift */; };
+		57893EF22128EEC400B5BEE4 /* MiscDontCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893EF12128EEC400B5BEE4 /* MiscDontCopy.swift */; };
 		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
 		57BB90DB211900C500DA2B00 /* TeamStateMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */; };
 		57CCE213212528D100BDBF56 /* AssetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCE212212528D100BDBF56 /* AssetKey.swift */; };
@@ -244,6 +246,8 @@
 		5760DE3A2102B28D00F2207F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		5760DE3C2102B3FF00F2207F /* AppModeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeActions.swift; sourceTree = "<group>"; };
 		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
+		57893EEF2128EB6100B5BEE4 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		57893EF12128EEC400B5BEE4 /* MiscDontCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDontCopy.swift; sourceTree = "<group>"; };
 		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
 		57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStateMgr.swift; sourceTree = "<group>"; };
 		57CCE212212528D100BDBF56 /* AssetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetKey.swift; sourceTree = "<group>"; };
@@ -362,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				57DE1DBB212359F400EC2DDB /* README.md */,
+				57893EEF2128EB6100B5BEE4 /* GameViewModel.swift */,
 			);
 			path = ViewStateApisRO;
 			sourceTree = "<group>";
@@ -527,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				57DE1DBD2123660000EC2DDB /* StateValueProto.swift */,
+				57893EF12128EEC400B5BEE4 /* MiscDontCopy.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -696,14 +702,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-nmg_ios_redux_state/Pods-nmg_ios_redux_state-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -717,6 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57893EF22128EEC400B5BEE4 /* MiscDontCopy.swift in Sources */,
 				57FF68F12106448D00789F20 /* TeamStateMarker.swift in Sources */,
 				57474095210ADF2F00B24EAA /* BasicResponseBody.swift in Sources */,
 				57474092210ADF2F00B24EAA /* ListRequestBody.swift in Sources */,
@@ -775,6 +788,7 @@
 				57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */,
 				5747408C210ADF2F00B24EAA /* CodableHelper.swift in Sources */,
 				57326B422107EDD800649323 /* TickerSettings.swift in Sources */,
+				57893EF02128EB6100B5BEE4 /* GameViewModel.swift in Sources */,
 				5747408D210ADF2F00B24EAA /* JSONEncodableEncoding.swift in Sources */,
 				57326B372107BCEF00649323 /* AccountState.swift in Sources */,
 				57474090210ADF2F00B24EAA /* DeleteInternalErrorResponseBody.swift in Sources */,

@@ -334,11 +334,11 @@ struct TeamStateMgr_Old: Equatable {
 				let tgt = TeamGameTree(teamID: g.favTeamId, games: [g])
 				teamMap[g.favTeamId] = tgt
 			}
-			if var _ = teamMap[g.underTeamId] {
-				teamMap[g.underTeamId]?.refresh(games: [g])
+			if let uid = g.underTeamId, var _ = teamMap[uid] {
+				teamMap[uid]?.refresh(games: [g])
 			} else {
-				let tgt = TeamGameTree(teamID: g.underTeamId, games: [g])
-				teamMap[g.underTeamId] = tgt
+				let tgt = TeamGameTree(teamID: g.underTeamId ?? "bug", games: [g])
+				teamMap[g.underTeamId!] = tgt
 			}
 		}
 		print("Just updated updateGameState")

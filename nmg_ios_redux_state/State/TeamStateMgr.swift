@@ -49,7 +49,9 @@ extension TeamStateMgr {
 		let (favTeamKey, underTeamKey) = AssetKey.makeFrom(game: game)
 		
 		var new = self.update(assetKey: favTeamKey, scoreDelta: 0, newScore: 0)	// "game.favScore"
-		new = new.update(assetKey: underTeamKey, scoreDelta: 0, newScore: 0)	// "game.underScore"
+		if let uak = underTeamKey {
+			new = new.update(assetKey: uak, scoreDelta: 0, newScore: 0)	// "game.underScore"
+		}
 		return new
 	}
 	

@@ -62,10 +62,14 @@ struct AssetKey: Codable, Hashable, Equatable {
 		self.init(teamId: _teamId, eventId: _eventId)
 	}
 	
-	static func makeFrom(game:Game) -> (AssetKey, AssetKey) {
+	static func makeFrom(game:Game) -> (AssetKey, AssetKey?) {
 		// use a game to create asset key's for each team
 		let favAK = AssetKey(teamId: game.favTeamId, eventId: game.eventId)
-		let underAK = AssetKey(teamId: game.underTeamId, eventId: game.eventId)
+		guard let underID = game.underTeamId
+		else {
+			return (favAK, nil)
+		}
+		let underAK = AssetKey(teamId: underID, eventId: game.eventId)
 		return (favAK, underAK)
 	}
 	
