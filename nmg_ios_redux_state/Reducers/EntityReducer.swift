@@ -9,9 +9,9 @@
 import ReSwift
 
 
-func coreEntityReducer(action: Action, state: CoreEntityRepo?) -> CoreEntityRepo {
+func coreEntityReducer(action: Action, state: CoreEntityRepoState?) -> CoreEntityRepoState {
 	// 
-	var state = state ?? CoreEntityRepo()
+	var state = state ?? CoreEntityRepoState()
 	
 	if let eventAction = action as? STAct.EventEvent {
 		switch eventAction {

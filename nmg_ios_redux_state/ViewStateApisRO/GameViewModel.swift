@@ -54,6 +54,15 @@ extension TeamViewModel {
 	var isOwned:Bool {
 		return portfolioSubset.isOwned
 	}
+	
+	fileprivate init(event:Event, team:Team) {
+		self.event = event
+		self.team = team
+		self.price = TeamPrice(teamId: "", currentPrice: 0, recentChange: 0)
+		self.assetKey = AssetKey.seed
+		self.portfolioSubset = TeamViewModel.UserPortfolioSubsetWrapper(stateLabel: "", isOwned: false)
+		self.isWatched = false
+	}
 }
 
 
@@ -91,10 +100,22 @@ struct GameTeamViewModel {
 		}
 	}
 	
+	private init() {
+		// dummy "SEED" rec as a placeholder simply to avoid optional on the view
+		self.event = Event.init(id: "", name: "", tournamentId: "", sportId: "")
+		self.game = Game.init(id: "", favTeamId: "", underTeamId: "", sportId: "", eventId: "", actualStartDtTm: Date()	)
+		self.favTeamVM = TeamViewModel(event:self.event, team: Team.seed)
+		self.underTeamVM = self.favTeamVM
+	}
+	
 	static func listFor(state:AppState, eventID:RDXTypes.EventID?, discriminatorID:String?, date:Date?, gameIDs:[RDXTypes.GameID]?) -> [GameTeamViewModel] {
 		// get list of GVM for the view depending on what he sends in args 2-5
 		
 		return []
+	}
+	
+	static func seed() -> GameTeamViewModel {
+		return GameTeamViewModel()
 	}
 }
 

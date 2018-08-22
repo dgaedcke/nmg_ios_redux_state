@@ -10,7 +10,7 @@
 import ReSwift
 
 
-func eventStateReducer(action: Action, state: CurrentEventState?, entityRecs:CoreEntityRepo?, pricesState:PricesState?) -> CurrentEventState {
+func eventStateReducer(action: Action, state: CurrentEventState?, entityRecs:CoreEntityRepoState?, pricesState:PricesState?) -> CurrentEventState {
 	//
 	var state = state ?? CurrentEventState()
 

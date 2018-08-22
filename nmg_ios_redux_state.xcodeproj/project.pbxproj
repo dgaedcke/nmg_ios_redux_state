@@ -15,15 +15,12 @@
 		57164E552101040200F4E76F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57164E532101040200F4E76F /* LaunchScreen.storyboard */; };
 		57164E5D2101045400F4E76F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 57164E5C2101045400F4E76F /* Podfile */; };
 		571B8D61210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */; };
-		571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571E83BA21238412001FC991 /* SubscribableSuperclass.swift */; };
 		57262AA72126052A00F83CF7 /* PortfolioState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57262AA62126052A00F83CF7 /* PortfolioState.swift */; };
 		57262AA92126053B00F83CF7 /* NotificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57262AA82126053B00F83CF7 /* NotificationState.swift */; };
 		57326B332107B3E500649323 /* EventEventActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B322107B3E500649323 /* EventEventActions.swift */; };
 		57326B352107B54500649323 /* FinancialActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B342107B54500649323 /* FinancialActions.swift */; };
 		57326B372107BCEF00649323 /* AccountState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B362107BCEF00649323 /* AccountState.swift */; };
 		57326B3C2107EAD900649323 /* TeamPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B392107EAD900649323 /* TeamPrices.swift */; };
-		57326B3D2107EAD900649323 /* TeamPricesRO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3A2107EAD900649323 /* TeamPricesRO.swift */; };
-		57326B3E2107EAD900649323 /* EventPrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3B2107EAD900649323 /* EventPrices.swift */; };
 		57326B402107EB1700649323 /* PricesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B3F2107EB1700649323 /* PricesState.swift */; };
 		57326B422107EDD800649323 /* TickerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B412107EDD800649323 /* TickerSettings.swift */; };
 		57326B442107F70300649323 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57326B432107F70300649323 /* NotificationAction.swift */; };
@@ -102,18 +99,15 @@
 		5760DE2F2102AA5700F2207F /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE2A2102AA5700F2207F /* Team.swift */; };
 		5760DE312102AE1500F2207F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE302102AE1500F2207F /* AppState.swift */; };
 		5760DE332102AE2F00F2207F /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE322102AE2E00F2207F /* AppReducer.swift */; };
-		5760DE372102B0E200F2207F /* EventReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE362102B0E200F2207F /* EventReducer.swift */; };
 		5760DE392102B24800F2207F /* PriceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE382102B24800F2207F /* PriceReducer.swift */; };
 		5760DE3B2102B28D00F2207F /* SettingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3A2102B28D00F2207F /* SettingsReducer.swift */; };
 		5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5760DE3C2102B3FF00F2207F /* AppModeActions.swift */; };
-		576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepo.swift */; };
+		576B14442113DA81002D03B4 /* CoreEntityRepoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576B14432113DA81002D03B4 /* CoreEntityRepoState.swift */; };
 		57893EF02128EB6100B5BEE4 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893EEF2128EB6100B5BEE4 /* GameViewModel.swift */; };
 		57893EF22128EEC400B5BEE4 /* MiscDontCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57893EF12128EEC400B5BEE4 /* MiscDontCopy.swift */; };
-		57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */; };
 		57BB90DB211900C500DA2B00 /* TeamStateMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */; };
 		57CCE213212528D100BDBF56 /* AssetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCE212212528D100BDBF56 /* AssetKey.swift */; };
 		57DE1DBE2123660000EC2DDB /* StateValueProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBD2123660000EC2DDB /* StateValueProto.swift */; };
-		57DE1DC02123666000EC2DDB /* ScopedSubscriberProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */; };
 		57FD2ECE2118B71F00B93CAC /* StoreApiExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */; };
 		57FD2ED02118BBC200B93CAC /* EntityReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */; };
 		57FF68E9210631FD00789F20 /* AccountBankReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FF68E8210631FD00789F20 /* AccountBankReducer.swift */; };
@@ -154,15 +148,12 @@
 		571B8D5E210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nmg_ios_redux_stateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		571B8D60210FB23B00B5C4A7 /* nmg_ios_redux_stateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nmg_ios_redux_stateTests.swift; sourceTree = "<group>"; };
 		571B8D62210FB23B00B5C4A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		571E83BA21238412001FC991 /* SubscribableSuperclass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableSuperclass.swift; sourceTree = "<group>"; };
 		57262AA62126052A00F83CF7 /* PortfolioState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioState.swift; sourceTree = "<group>"; };
 		57262AA82126053B00F83CF7 /* NotificationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationState.swift; sourceTree = "<group>"; };
 		57326B322107B3E500649323 /* EventEventActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEventActions.swift; sourceTree = "<group>"; };
 		57326B342107B54500649323 /* FinancialActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialActions.swift; sourceTree = "<group>"; };
 		57326B362107BCEF00649323 /* AccountState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountState.swift; sourceTree = "<group>"; };
 		57326B392107EAD900649323 /* TeamPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPrices.swift; sourceTree = "<group>"; };
-		57326B3A2107EAD900649323 /* TeamPricesRO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamPricesRO.swift; sourceTree = "<group>"; };
-		57326B3B2107EAD900649323 /* EventPrices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPrices.swift; sourceTree = "<group>"; };
 		57326B3F2107EB1700649323 /* PricesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesState.swift; sourceTree = "<group>"; };
 		57326B412107EDD800649323 /* TickerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerSettings.swift; sourceTree = "<group>"; };
 		57326B432107F70300649323 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAction.swift; sourceTree = "<group>"; };
@@ -241,19 +232,16 @@
 		5760DE2A2102AA5700F2207F /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Team.swift; path = nmg_ios_redux_state/Models/Team.swift; sourceTree = SOURCE_ROOT; };
 		5760DE302102AE1500F2207F /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5760DE322102AE2E00F2207F /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		5760DE362102B0E200F2207F /* EventReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventReducer.swift; sourceTree = "<group>"; };
 		5760DE382102B24800F2207F /* PriceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceReducer.swift; sourceTree = "<group>"; };
 		5760DE3A2102B28D00F2207F /* SettingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsReducer.swift; sourceTree = "<group>"; };
 		5760DE3C2102B3FF00F2207F /* AppModeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModeActions.swift; sourceTree = "<group>"; };
-		576B14432113DA81002D03B4 /* CoreEntityRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepo.swift; sourceTree = "<group>"; };
+		576B14432113DA81002D03B4 /* CoreEntityRepoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEntityRepoState.swift; sourceTree = "<group>"; };
 		57893EEF2128EB6100B5BEE4 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		57893EF12128EEC400B5BEE4 /* MiscDontCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscDontCopy.swift; sourceTree = "<group>"; };
-		57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateAccessProxy.swift; sourceTree = "<group>"; };
 		57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamStateMgr.swift; sourceTree = "<group>"; };
 		57CCE212212528D100BDBF56 /* AssetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetKey.swift; sourceTree = "<group>"; };
 		57DE1DBB212359F400EC2DDB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		57DE1DBD2123660000EC2DDB /* StateValueProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateValueProto.swift; sourceTree = "<group>"; };
-		57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScopedSubscriberProto.swift; sourceTree = "<group>"; };
 		57FD2ECD2118B71E00B93CAC /* StoreApiExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreApiExtensions.swift; sourceTree = "<group>"; };
 		57FD2ECF2118BBC200B93CAC /* EntityReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityReducer.swift; sourceTree = "<group>"; };
 		57FF68E8210631FD00789F20 /* AccountBankReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBankReducer.swift; sourceTree = "<group>"; };
@@ -312,7 +300,6 @@
 			isa = PBXGroup;
 			children = (
 				571E83BD2123C86C001FC991 /* Util */,
-				571E83BC2123C53A001FC991 /* niu */,
 				57CCE211212528BB00BDBF56 /* Models (keep) */,
 				5760DE252102AA3500F2207F /* Models (dont copy) */,
 				57DE1DBC212365E300EC2DDB /* Protocols */,
@@ -338,19 +325,6 @@
 				571B8D62210FB23B00B5C4A7 /* Info.plist */,
 			);
 			path = nmg_ios_redux_stateTests;
-			sourceTree = "<group>";
-		};
-		571E83BC2123C53A001FC991 /* niu */ = {
-			isa = PBXGroup;
-			children = (
-				57DE1DBF2123666000EC2DDB /* ScopedSubscriberProto.swift */,
-				57326B3A2107EAD900649323 /* TeamPricesRO.swift */,
-				5760DE362102B0E200F2207F /* EventReducer.swift */,
-				57326B3B2107EAD900649323 /* EventPrices.swift */,
-				57A5E64F211BA8AA0013D2C9 /* StateAccessProxy.swift */,
-				571E83BA21238412001FC991 /* SubscribableSuperclass.swift */,
-			);
-			path = niu;
 			sourceTree = "<group>";
 		};
 		571E83BD2123C86C001FC991 /* Util */ = {
@@ -489,7 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				5760DE302102AE1500F2207F /* AppState.swift */,
-				576B14432113DA81002D03B4 /* CoreEntityRepo.swift */,
+				576B14432113DA81002D03B4 /* CoreEntityRepoState.swift */,
 				574642EA210660F400FBAE49 /* CurrentEventState.swift */,
 				57BB90DA211900C500DA2B00 /* TeamStateMgr.swift */,
 				57326B3F2107EB1700649323 /* PricesState.swift */,
@@ -740,7 +714,6 @@
 				574740C1210ADF2F00B24EAA /* Configuration.swift in Sources */,
 				5760DE2D2102AA5700F2207F /* Holding.swift in Sources */,
 				574740B8210ADF2F00B24EAA /* LoadResponseBody.swift in Sources */,
-				5760DE372102B0E200F2207F /* EventReducer.swift in Sources */,
 				57BB90DB211900C500DA2B00 /* TeamStateMgr.swift in Sources */,
 				5747408A210ADF2F00B24EAA /* PortfolioAPI.swift in Sources */,
 				5760DE2F2102AA5700F2207F /* Team.swift in Sources */,
@@ -761,7 +734,6 @@
 				574740A0210ADF2F00B24EAA /* WithdrawFundsResponseBody.swift in Sources */,
 				57474083210ADF2F00B24EAA /* APIHelper.swift in Sources */,
 				57FF68F22106448D00789F20 /* GameCollection.swift in Sources */,
-				57326B3D2107EAD900649323 /* TeamPricesRO.swift in Sources */,
 				574740B6210ADF2F00B24EAA /* WithdrawFundsRequestBody.swift in Sources */,
 				57474098210ADF2F00B24EAA /* DepositFundsResponseBody.swift in Sources */,
 				574740A8210ADF2F00B24EAA /* PositionsRequestBody.swift in Sources */,
@@ -776,7 +748,6 @@
 				574740A6210ADF2F00B24EAA /* BasicInternalErrorResponseBody.swift in Sources */,
 				57326B402107EB1700649323 /* PricesState.swift in Sources */,
 				5760DE3D2102B3FF00F2207F /* AppModeActions.swift in Sources */,
-				57A5E650211BA8AA0013D2C9 /* StateAccessProxy.swift in Sources */,
 				574740B0210ADF2F00B24EAA /* PositionsInternalErrorResponseBody.swift in Sources */,
 				57474097210ADF2F00B24EAA /* SummaryRequestBody.swift in Sources */,
 				5747408F210ADF2F00B24EAA /* SummarymsgResponseBody.swift in Sources */,
@@ -818,11 +789,10 @@
 				574740A7210ADF2F00B24EAA /* ListResponseBody.swift in Sources */,
 				57FF68F32106448D00789F20 /* TeamStatus.swift in Sources */,
 				57474087210ADF2F00B24EAA /* PrefsAPI.swift in Sources */,
-				57DE1DC02123666000EC2DDB /* ScopedSubscriberProto.swift in Sources */,
 				574740AE210ADF2F00B24EAA /* SummarymsgResponseBodyCollection.swift in Sources */,
 				574740B1210ADF2F00B24EAA /* SummaryElementResponseBody.swift in Sources */,
 				57474088210ADF2F00B24EAA /* AccountAPI.swift in Sources */,
-				576B14442113DA81002D03B4 /* CoreEntityRepo.swift in Sources */,
+				576B14442113DA81002D03B4 /* CoreEntityRepoState.swift in Sources */,
 				574740AA210ADF2F00B24EAA /* CancelRequestBody.swift in Sources */,
 				574740AF210ADF2F00B24EAA /* SubmitRequestBody.swift in Sources */,
 				5760DE2E2102AA5700F2207F /* Sport.swift in Sources */,
@@ -830,14 +800,12 @@
 				5747409C210ADF2F00B24EAA /* UpdateRequestBody.swift in Sources */,
 				5760DE392102B24800F2207F /* PriceReducer.swift in Sources */,
 				5747408B210ADF2F00B24EAA /* OrdersAPI.swift in Sources */,
-				57326B3E2107EAD900649323 /* EventPrices.swift in Sources */,
 				574740BF210ADF2F00B24EAA /* JSONEncodingHelper.swift in Sources */,
 				574740B2210ADF2F00B24EAA /* OrderResultsMsg.swift in Sources */,
 				57FF68F02106448D00789F20 /* TeamStateSingleton.swift in Sources */,
 				57326B4C21097E0A00649323 /* RDXTypeAliases.swift in Sources */,
 				5747408E210ADF2F00B24EAA /* APIs.swift in Sources */,
 				574740B3210ADF2F00B24EAA /* StorePushNotifyTokenInternalErrorResponseBody.swift in Sources */,
-				571E83BB21238412001FC991 /* SubscribableSuperclass.swift in Sources */,
 				5747409E210ADF2F00B24EAA /* RefreshResponseBody.swift in Sources */,
 				57164E4B2101040100F4E76F /* AppDelegate.swift in Sources */,
 			);

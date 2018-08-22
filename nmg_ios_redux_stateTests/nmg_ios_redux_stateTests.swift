@@ -70,7 +70,7 @@ class nmg_ios_redux_stateTests: XCTestCase {
 
 extension nmg_ios_redux_stateTests: StoreSubscriber {
 	
-	func newState(state: CoreEntityRepo) {
+	func newState(state: CoreEntityRepoState) {
 //		callbackCount += 1
 		print("got callback:  \(self.pendExpectation?.debugDescription ?? "oops?")")
 		switch self.pendExpectation?.debugDescription ?? "oops?" {

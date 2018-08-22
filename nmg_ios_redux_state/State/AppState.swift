@@ -19,7 +19,7 @@ struct AppState: StateType, Equatable {
 	*/
 	
 	// entityRecs keeps copies of Events, Games, Teams, WatchLists
-	let entityRecs: CoreEntityRepo
+	let entityRecs: CoreEntityRepoState
 	// related IDs for current event selected by the user
 	let curEventState:CurrentEventState
 	// pricesState keeps copies of most recent teamPrice values

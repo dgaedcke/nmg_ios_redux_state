@@ -13,7 +13,7 @@ import Foundation
 // we use it to hold latest copy of every rec received whether it's
 // active (part of current user-selected event) or not
 
-struct CoreEntityRepo: Equatable {	// , Hashable
+struct CoreEntityRepoState: Equatable {	// , Hashable
 	/*  abstract store for model records of many types
 		ReSwift store is MUCH more efficient with equatable structs
 		at some point after reducers run, store will check which parts of state
@@ -25,7 +25,7 @@ struct CoreEntityRepo: Equatable {	// , Hashable
 	private var objMap = [String:ModelType]()
 	private var lastUpdatedDtTm = Date()
 	
-	func bulkInit(games:[Game], teams:[Team]) -> CoreEntityRepo {
+	func bulkInit(games:[Game], teams:[Team]) -> CoreEntityRepoState {
 		// called when app first runs with all games/teams
 		var new = self
 		print("Err: FINISHME")
@@ -33,7 +33,7 @@ struct CoreEntityRepo: Equatable {	// , Hashable
 		return self
 	}
 	
-	func updateObj(rec:StateValueProto) -> CoreEntityRepo {
+	func updateObj(rec:StateValueProto) -> CoreEntityRepoState {
 		var new = self
 		let box = ModelType.box(rec: rec)
 		let key = box.fullKey(recID:rec.id)
@@ -63,7 +63,7 @@ struct CoreEntityRepo: Equatable {	// , Hashable
 		return box.valueFromBox()
 	}
 	
-	static func == (lhs: CoreEntityRepo, rhs: CoreEntityRepo) -> Bool {
+	static func == (lhs: CoreEntityRepoState, rhs: CoreEntityRepoState) -> Bool {
 		return lhs.lastUpdatedDtTm == rhs.lastUpdatedDtTm
 	}
 }
